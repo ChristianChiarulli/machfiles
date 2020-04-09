@@ -1,0 +1,6 @@
+#!/bin/bash
+[ -z "$CONDA_DEFAULT_ENV" ] && echo "Please activate a virtual environment" && exit 1
+echo "Creating kernel for $CONDA_DEFAULT_ENV"
+conda install ipykernel -y
+ipython kernel install --user --name=$CONDA_DEFAULT_ENV
+echo "Done"

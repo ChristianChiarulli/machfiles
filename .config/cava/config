@@ -21,7 +21,7 @@
 
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-; bars = 0
+; bars = 120
 ; bar_width = 2
 ; bar_spacing = 1
 
@@ -103,8 +103,8 @@
 # or remain commented out. 1 = on, 0 = off. Warning: for certain terminal emulators cava will
 # not able to restore color definitions on exit, simply restart your terminal to restore colors.
 gradient = 1
-gradient_color_1 = '#0099ff'
-gradient_color_2 = '#ff3399'
+gradient_color_1 = '#61afef'
+gradient_color_2 = '#c678dd'
 
 
 

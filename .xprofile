@@ -1,0 +1,21 @@
+# Starting compositor
+picom -b
+
+# Notification center
+deadd-notification-center &
+
+# Stop screen from going blank
+xset s off
+xset -dpms
+xset s noblank
+
+# Hide Cursor when typing
+xbanish &
+
+# Open flameshot on startup
+flameshot &
+
+# Wallpaper
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+
+setbg /storage/pics/wallpapers
