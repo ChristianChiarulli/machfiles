@@ -46,6 +46,11 @@ dls/
 docs/
 repos/
 pics/
+Downloads/
+Docs/
+Repos/
+Pics/
+Code/
 *.log
 .gitconfig
 .oh-my-zsh

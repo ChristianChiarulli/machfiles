@@ -80,7 +80,7 @@ button selected {
 }
 
 listview {
-	scrollbar: true;
+  scrollbar: true;
 	margin: 0 10px 0 30px;
 }
 
