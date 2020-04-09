@@ -59,16 +59,14 @@ polybar
 portaudio
 pulseaudio
 pulseaudio-bluetooth
+python-pip
 ranger
 rofi
 rxvt-unicode
-shortwave
 sox
 spotify
-spotify-tui-bin
 sxiv
 tmux
-unclutter
 unzip
 vi
 vim

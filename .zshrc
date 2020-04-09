@@ -90,6 +90,7 @@ alias p='sudo pacman -S'
 alias y='yay -S'
 alias fshoot_full='flameshot full -p ~/pics/screenshots'
 alias kill_vbox="kill $(ps -e | grep VirtualBox | awk '{ print $1 }')"
+alias wallpapers="sxiv /storage/pics/wallpapers"
 #alias set_python_path="source set_python_path"
 
 # Include hidden files in autocomplete:
