@@ -9,6 +9,9 @@ xset s off
 xset -dpms
 xset s noblank
 
+# Faster key repeat and delay
+xset r rate 210 40
+
 # Hide Cursor when typing
 xbanish &
 

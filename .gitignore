@@ -1,4 +1,5 @@
 .cache/
+.pcloud/
 .config/**/BraveSoftware/
 .config/**/coc/
 .config/**/configstore/
@@ -15,6 +16,8 @@
 .config/**/chromium/
 .config/**/spotify-tui/
 .config/**/nitrogen/
+.config/**/pcloud/
+.config/**/autostart/
 .config/**/pavucontrol.ini
 .pylint.d/
 *.log
@@ -30,6 +33,7 @@
 .nvm/
 .npm/
 .ipython/
+.local/state/
 .ipynb_checkpoints/
 .vim/
 .fnm/
@@ -54,3 +58,4 @@ Code/
 *.log
 .gitconfig
 .oh-my-zsh
+.NERDTreeBookmarks

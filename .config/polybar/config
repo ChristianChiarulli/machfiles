@@ -105,7 +105,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3 xwindow
 modules-center = spotify1
-modules-right = arrow1 networkspeedup networkspeeddown arrow2 memory2 arrow4 cpu2 arrow3 arrow2 pacman-updates arrow4 arrow3 pavolume arrow3 arrow2 date arrow5
+modules-right = networkspeedup networkspeeddown sep memory2 sep cpu2 sep pacman-updates sep pavolume sep date
 
 separator = 
 
@@ -199,19 +199,19 @@ fuzzy-match = false
 
 ;extra icons to choose from
 ;http://fontawesome.io/cheatsheet/
-;       v     
+;       v      
 
-;ws-icon-0 = 1;
-;ws-icon-1 = 2;
-;ws-icon-2 = 3;
-;ws-icon-3 = 4;
-;ws-icon-4 = 5;
-;ws-icon-5 = 6;
-;ws-icon-6 = 7;
-;ws-icon-7 = 8;
-;ws-icon-8 = 9;
-;ws-icon-9 = 10;
-;ws-icon-default = ""
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = ""
 
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
@@ -274,41 +274,13 @@ format-background = ${colors.background}
 ################################################################################
 ################################################################################
 
-
-[module/arrow1]
+[module/sep]
 type = custom/text
-content = 
-content-font = 2
-content-foreground = #121212
-content-background = #8c0a0a0a
-
-[module/arrow2]
-type = custom/text
-content =  
-content-font = 2
-content-foreground = #c678dd
-content-background = #121212
-
-[module/arrow3]
-type = custom/text
-content = 
-content-font = 2
-content-foreground = #121212
-content-background = #121212
-
-[module/arrow4]
-type = custom/text
-content = 
-content-font = 2
-content-foreground = #c678dd
-content-background = #121212
-
-[module/arrow5]
-type = custom/text
-content = 
+content = |
 content-font = 2
 content-foreground = #c678dd
 content-background = #8c0a0a0a
+
 ################################################################################
 ###############################################################################
 ############                       MODULES A-Z                      ############
@@ -328,95 +300,6 @@ format-prefix = "  "
 
 ################################################################################
 
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-prefix-foreground = #7D49B6
-format-prefix-underline = #7D49B6
-format-underline = #7D49B6
-################################################################################
-
-[module/backlight]
-;https://github.com/jaagr/polybar/wiki/Module:-backlight
-
-type = internal/backlight
-
-; Use the following command to list available cards:
-; $ ls -1 /sys/class/backlight/
-card = intel_backlight
-
-; Available tags:
-;   <label> (default)
-;   <ramp>
-;   <bar>
-format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-; Available tokens:
-;   %percentage% (default)
-label = %percentage%%
-
-; Only applies if <ramp> is used
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-; Only applies if <bar> is used
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
-
-################################################################################
-
-[module/battery]
-;https://github.com/jaagr/polybar/wiki/Module:-battery
-type = internal/battery
-battery = BAT0
-adapter = AC0
-full-at = 100
-
-format-charging = <animation-charging> <label-charging>
-label-charging =  %percentage%%
-format-charging-foreground = ${colors.foreground}
-format-charging-background = ${colors.background}
-format-charging-underline = #a3c725
-
-format-discharging = <ramp-capacity> <label-discharging>
-label-discharging =  %percentage%%
-format-discharging-underline = #c7ae25
-format-discharging-foreground = ${colors.foreground}
-format-discharging-background = ${colors.background}
-
-format-full-prefix = " "
-format-full-prefix-foreground = #a3c725
-format-full-underline = #a3c725
-format-full-foreground = ${colors.foreground}
-format-full-background = ${colors.background}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-foreground = #c7ae25
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-foreground = #a3c725
-animation-charging-framerate = 750
-
-################################################################################
-
 [module/compton]
 ;https://github.com/jaagr/polybar/wiki/User-contributed-modules#compton
 type = custom/script
@@ -429,70 +312,15 @@ format-background = ${colors.background}
 
 ################################################################################
 
-[module/cpu1]
-;https://github.com/jaagr/polybar/wiki/Module:-cpu
-type = internal/cpu
-; Seconds to sleep between updates
-; Default: 1
-interval = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-;   
-format-prefix = " "
-format-prefix-foreground = #cd1f3f
-format-underline = #645377
-
-; Available tags:
-;   <label> (default)
-;   <bar-load>
-;   <ramp-load>
-;   <ramp-coreload>
-format = <label> <ramp-coreload>
-
-format-padding = 2
-
-; Available tokens:
-;   %percentage% (default) - total cpu load
-;   %percentage-cores% - load percentage for each core
-;   %percentage-core[1-9]% - load percentage for specific core
-label-font = 3
-label = CPU: %percentage%%
-ramp-coreload-0 = ▁
-ramp-coreload-0-font = 3
-ramp-coreload-0-foreground = #aaff77
-ramp-coreload-1 = ▂
-ramp-coreload-1-font = 3
-ramp-coreload-1-foreground = #aaff77
-ramp-coreload-2 = ▃
-ramp-coreload-2-font = 3
-ramp-coreload-2-foreground = #aaff77
-ramp-coreload-3 = ▄
-ramp-coreload-3-font = 3
-ramp-coreload-3-foreground = #aaff77
-ramp-coreload-4 = ▅
-ramp-coreload-4-font = 3
-ramp-coreload-4-foreground = #fba922
-ramp-coreload-5 = ▆
-ramp-coreload-5-font = 3
-ramp-coreload-5-foreground = #fba922
-ramp-coreload-6 = ▇
-ramp-coreload-6-font = 3
-ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7 = █
-ramp-coreload-7-font = 3
-ramp-coreload-7-foreground = #ff5555
-
-################################################################################
-
 [module/cpu2]
 ;https://github.com/jaagr/polybar/wiki/Module:-cpu
 type = internal/cpu
 ; Seconds to sleep between updates
 ; Default: 1
 interval = 1
-format-foreground = #c678dd
-format-background = #121212
-format-prefix-foreground = #de0a0a0a
+format-foreground = ${colors.foreground}
+format-background = #8c0a0a0a
+format-prefix-foreground = ${colors.foreground}
 
 label-font = 1
 
@@ -524,63 +352,12 @@ date-alt = " %a %b %d, %Y"
 time = %l:%M%p
 time-alt = %l:%M%p
 ;format-prefix = " "
-format-prefix-foreground = #de0a0a0a
-format-foreground = #de0a0a0a
-format-background = #c678dd
+format-prefix-foreground = ${colors.foreground}
+format-foreground = ${colors.foreground}
+format-background = #8c0a0a0a
 label = "%date% %time% "
 
 #################################################################
-
-[module/ewmh]
-type = internal/xworkspaces
-
-pin-workspaces = false
-enable-click = true
-enable-scroll = true
-reverse-scroll = true
-
-;extra icons to choose from
-;http://fontawesome.io/cheatsheet/
-;       v     
-
-icon-0 = 1;
-icon-1 = 2;
-icon-2 = 3;
-icon-3 = 4;
-icon-4 = 5;
-icon-5 = 6;
-icon-6 = 7;
-icon-7 = 8;
-#icon-8 = 9;
-#icon-9 = 10;
-#icon-default = " "
-format = <label-state>
-label-monitor = %name%
-
-label-active = %name%
-label-active-foreground = ${colors.foreground}
-label-active-background = ${colors.background}
-label-active-underline= #6790eb
-label-active-padding = 1
-
-label-occupied = %name%
-label-occupied-background = ${colors.background}
-label-occupied-padding = 1
-
-label-urgent = %name%
-label-urgent-foreground = ${colors.foreground}
-label-urgent-background = ${colors.alert}
-label-urgent-underline = ${colors.alert}
-label-urgent-padding = 1
-
-label-empty = %name%
-label-empty-foreground = ${colors.foreground}
-label-empty-padding = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-
-################################################################################
 
 [module/filesystem]
 ;https://github.com/jaagr/polybar/wiki/Module:-filesystem
@@ -650,53 +427,6 @@ format-underline = #4B5665
 
 ################################################################################
 
-[module/load-average]
-type = custom/script
-exec = uptime | grep -ohe 'load average[s:][: ].*' | awk '{ print $3" "$4" "$5"," }' | sed 's/,//g'
-interval = 100
-
-;HOW TO SET IT MINIMAL 10 CHARACTERS - HIDDEN BEHIND SYSTEM ICONS
-;label = %output%
-label = %output:10%
-
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-prefix = "  "
-format-prefix-foreground = #62FF00
-format-underline = #62FF00
-
-################################################################################
-
-[module/memory1]
-;https://github.com/jaagr/polybar/wiki/Module:-memory
-type = internal/memory
-interval = 1
-; Available tokens:
-;   %percentage_used% (default)
-;   %percentage_free%
-;   %gb_used%
-;   %gb_free%
-;   %gb_total%
-;   %mb_used%
-;   %mb_free%
-;   %mb_total%
-label = %percentage_used%%
-bar-used-indicator =
-bar-used-width = 10
-bar-used-foreground-0 = #3384d0
-bar-used-fill = 
-bar-used-empty = 
-bar-used-empty-foreground = #ffffff
-
-format = <label> <bar-used>
-format-prefix = "  "
-format-prefix-foreground = #3384d0
-format-underline = #4B5665
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-################################################################################
-
 [module/memory2]
 ;https://github.com/jaagr/polybar/wiki/Module:-memory
 type = internal/memory
@@ -711,37 +441,11 @@ interval = 1
 ;   %mb_free%
 ;   %mb_total%
 label = %percentage_used%%
-
 format = MEM <label>
 format-prefix = " "
-format-prefix-foreground = #de0a0a0a
-format-foreground = #de0a0a0a
-format-background = #c678dd
-
-################################################################################
-
-[module/memory3]
-;https://github.com/jaagr/polybar/wiki/Module:-memory
-type = internal/memory
-interval = 1
-; Available tokens:
-;   %percentage_used% (default)
-;   %percentage_free%
-;   %gb_used%
-;   %gb_free%
-;   %gb_total%
-;   %mb_used%
-;   %mb_free%
-;   %mb_total%
-label = %gb_used%/%gb_free%
-
-format = Mem <label>
-format-prefix = "  "
-format-prefix-foreground = #3384d0
-format-underline = #3384d0
+format-prefix-foreground = ${colors.foreground}
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
+format-background = #8c0a0a0a
 
 ################################################################################
 
@@ -779,9 +483,9 @@ interface = enp39s0
 label-connected = "%upspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-prefix-foreground = #c678dd
-format-connected-foreground = #c678dd
-format-connected-background = #121212
+format-connected-prefix-foreground = ${colors.foreground}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = #8c0a0a0a
 
 ################################################################################
 
@@ -795,9 +499,9 @@ interface = enp39s0
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = "  "
-format-connected-prefix-foreground = #c678dd
-format-connected-foreground = #c678dd
-format-connected-background = #121212
+format-connected-prefix-foreground = ${colors.foreground}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = #8c0a0a0a
 
 ################################################################################
 
@@ -806,8 +510,8 @@ type = custom/script
 exec = pacman -Qu | wc -l
 interval = 1000
 label = Repo: %output%
-format-foreground = #de0a0a0a
-format-background = #c678dd
+format-foreground = ${colors.foreground}
+format-background = #8c0a0a0a
 format-prefix = "  "
 ;format-prefix-foreground = #FFBB00
 ;format-underline = #FFBB00
@@ -823,10 +527,8 @@ click-right = exec pavucontrol
 click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-foreground = #c678dd
-format-background = #121212
-
-
+format-foreground = ${colors.foreground}
+format-background = #8c0a0a0a
 
 ################################################################################
 
@@ -854,17 +556,6 @@ format-background = ${colors.background}
 format-prefix = "  "
 format-prefix-foreground = #62FF00
 format-underline = #62FF00
-
-################################################################################
-
-[module/sep]
-; alternative separator
-type = custom/text
-content = 
-content-foreground = ${colors.foreground}
-content-background =  ${colors.background}
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
 
 ################################################################################
 
@@ -1029,105 +720,3 @@ label-disconnected-foreground = ${colors.foreground}
 
 ################################################################################
 
-[module/wireless-network]
-;https://github.com/jaagr/polybar/wiki/Module:-network
-type = internal/network
-interface = ${env:WIRELESS}
-interval = 3.0
-label-connected = %essid%
-
-format-connected = <label-connected>
-;format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-format-connected-prefix = "  "
-format-connected-prefix-foreground = #7e52c6
-format-connected-prefix-background = ${colors.background}
-format-connected-underline = #7e52c6
-
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.alert}
-label-disconnected-background = ${colors.background}
-
-format-disconnected = <label-disconnected>
-format-disconnected-foreground = ${colors.alert}
-format-disconnected-background = ${colors.background}
-format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = ${colors.alert}
-format-disconnected-prefix-background = ${colors.background}
-format-disconnected-underline =${colors.alert}
-
-ramp-signal-0 = ▁
-ramp-signal-1 = ▂
-ramp-signal-2 = ▃
-ramp-signal-3 = ▄
-ramp-signal-4 = ▅
-ramp-signal-5 = ▆
-ramp-signal-6 = ▇
-ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
-
-################################################################################
-
-[module/xbacklight]
-;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
-type = internal/xbacklight
-format = <label> <bar>
-format-prefix = "   "
-format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.background}
-format-prefix-underline = #9f78e1
-format-underline = #9f78e1
-label = %percentage%%
-bar-width = 10
-bar-indicator = 
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = 
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = 
-bar-empty-font = 2
-bar-empty-foreground = #fff
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-################################################################################
-
-[module/xkeyboard]
-;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.background}
-format-prefix-underline = #3ecfb2
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-label-layout = %layout%
-label-layout-underline = #3ecfb2
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.background}
-label-indicator-underline = ${colors.foreground}
-
-################################################################################
-
-[module/xwindow]
-;https://github.com/jaagr/polybar/wiki/Module:-xwindow
-type = internal/xwindow
-
-; Available tokens:
-;   %title%
-; Default: %title%
-label = %title%
-label-maxlen = 50
-
-format-prefix = "  "
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-###############################################################################
-# vim:ft=dosini

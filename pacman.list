@@ -10,6 +10,7 @@ broot
 cava
 cheat
 chromium
+cli-visualizer-git
 cmatrix
 cmus
 compton-conf
@@ -33,6 +34,8 @@ htop
 i3-gaps
 i3lock
 i3status
+lastpass
+lastpass-cli
 lightdm
 lightdm-gtk-greeter
 linux
@@ -44,6 +47,7 @@ mtools
 nautilus
 neofetch
 neovim
+networkmanager
 nitrogen
 ntfs-3g
 nvidia

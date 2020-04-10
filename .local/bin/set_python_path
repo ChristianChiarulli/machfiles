@@ -2,7 +2,7 @@
 # This script sets your pythonpath to your current active conda env
 # It could use some work
 
-[ -z "$CONDA_DEFAULT_ENV" ] 
+if [ -z "$CONDA_DEFAULT_ENV" ] 
 then
     echo "Please activate a virtual environment"
 else

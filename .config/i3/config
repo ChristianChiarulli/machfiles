@@ -148,6 +148,13 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Assign Workspaces:
+assign [class="Brave"] $ws7
+assign [class="Chromium"] $ws7
+assign [class="discord"] $ws8
+assign [class="obs"] $ws10
+for_window [class="Spotify"] move to workspace $ws9
+
 # switch to workspace
 bindsym $mod+1		workspace $ws1
 bindsym $mod+2		workspace $ws2
@@ -202,7 +209,7 @@ bindsym $mod+Shift+F1	exec --no-startup-id toggle-welcome
 
 # #---Arrow Keys---# #
 bindsym $mod+Left		focus left
-bindsym $mod+Shift+Left resize grow width 5 px or 5 ppt
+bindsym $mod+Shift+Left resize shrink width 5 px or 5 ppt
 bindsym $mod+Ctrl+Left		move workspace to output right
 bindsym $mod+Down		focus down
 bindsym $mod+Shift+Down resize shrink height 5 px or 5 ppt
@@ -211,7 +218,7 @@ bindsym $mod+Up			focus up
 bindsym $mod+Shift+Up resize grow height 5 px or 5 ppt
 bindsym $mod+Ctrl+Up		move workspace to output down
 bindsym $mod+Right 		focus right
-bindsym $mod+Shift+Right resize shrink width 5 px or 5 ppt
+bindsym $mod+Shift+Right resize grow width 5 px or 5 ppt
 bindsym $mod+Ctrl+Right		move workspace to output left
 
 # #---Media Keys---# #

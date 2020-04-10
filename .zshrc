@@ -1,9 +1,8 @@
 # ZSH config
-xset r rate 210 40
 export GTK_THEME=Adwaita:dark
 export PATH=$HOME/.miniconda/envs/jupyter-lab/bin:$PATH
 # Path to your oh-my-zsh installation.
-export ZSH="/home/chris/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 export LANG=en_US.UTF-8
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:~/.local/bin
@@ -100,24 +99,24 @@ _comp_options+=(globdots)
 # Junk added by robot
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/chris/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/${USER}/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/chris/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "/home/chris/.miniconda/etc/profile.d/conda.sh"
+    if [ -f "/home/$USER/.miniconda/etc/profile.d/conda.sh" ]; then
+        . "/home/$USER/.miniconda/etc/profile.d/conda.sh"
     else
-        export PATH="/home/chris/.miniconda/bin:$PATH"
+        export PATH="/home/$USER/.miniconda/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 # export PATH="$HOME/.miniconda/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
 
-source /home/chris/.config/broot/launcher/bash/br
+source /home/$USER/.config/broot/launcher/bash/br
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fnm
-export PATH=/home/chris/.fnm:$PATH
+export PATH=/home/$USER/.fnm:$PATH
 eval "`fnm env --multi`"
