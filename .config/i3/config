@@ -149,8 +149,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Assign Workspaces:
-assign [class="Brave"] $ws7
-assign [class="Chromium"] $ws7
+assign [class="Brave"] $ws1
+assign [class="Chromium"] $ws1
 assign [class="discord"] $ws8
 assign [class="obs"] $ws10
 for_window [class="Spotify"] move to workspace $ws9
