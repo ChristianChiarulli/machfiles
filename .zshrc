@@ -1,26 +1,14 @@
 # ZSH config
-export GTK_THEME=Adwaita:dark
-export PATH=$HOME/.miniconda/envs/jupyter-lab/bin:$PATH
 # Path to your oh-my-zsh installation.
+#export GTK_THEME=Adwaita:dark
 export ZSH="/home/$USER/.oh-my-zsh"
 export LANG=en_US.UTF-8
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:~/.local/bin
-# script to do this when activating conda
+export PATH=$HOME/.miniconda/envs/jupyter-lab/bin:$PATH
 
 # Uncomment the following line to use case-sensitive completion.
- CASE_SENSITIVE="true"
-
-# Uncomment the following line to enable command auto-correction.
-#ENABLE_CORRECTION="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+CASE_SENSITIVE="true"
 
 # Which plugins would you like to load?
 plugins=(
@@ -48,6 +36,7 @@ fi
 #autoload -U colors && colors
 export CLICOLOR=1
 PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]%}]%{$reset_color%}%  %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} '
 #PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
@@ -68,17 +57,18 @@ function zle-keymap-select {
   fi
 }
 
-alias ls='ls --color=auto'
 alias gpu_watch="watch -n -1 nvidia-smi"
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias f="ranger"
 alias v="nvim ."
+# use this with media keys later
 #alias play="spotify play"
 #alias pause="spotify pause"
 #alias next="spotify next"
 #alias prev="spotify prev"
 alias gp='git add . && git commit -m "auto push" && git push'
+alias blog_post='cd ~/Repos/blog && git add . && git commit -m "auto push" && git push && cd -'
 alias config='ranger ~/.config'
 alias repos='ranger ~/Repos'
 alias zrc='nvim ~/.zshrc'
@@ -91,12 +81,14 @@ alias fshoot_full='flameshot full -p ~/pics/screenshots'
 alias kill_vbox="kill $(ps -e | grep VirtualBox | awk '{ print $1 }')"
 alias wallpapers="sxiv /storage/pics/wallpapers"
 alias list_systemctl="systemctl list-unit-files --state=enabled"
-#alias set_python_path="source set_python_path"
+alias kill_jupyter="killall jupyter-lab"
+alias set_python_path="source set_python_path"
 
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
 
 # Junk added by robot
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/${USER}/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

@@ -21,4 +21,11 @@ flameshot &
 # Wallpaper
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
+# Save your eyes
+redshift & 
+#redshift-gtk & 
+
 setbg /storage/pics/wallpapers
+
+# You don't need this and I should write a script to fix it
+echo "connect 08:EB:ED:E2:A0:4D" | bluetoothctl

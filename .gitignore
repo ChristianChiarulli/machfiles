@@ -55,6 +55,7 @@ Docs/
 Repos/
 Pics/
 Code/
+Blog/
 *.log
 .gitconfig
 .oh-my-zsh

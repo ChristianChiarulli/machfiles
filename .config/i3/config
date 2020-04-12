@@ -7,7 +7,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # #---Basic Definitions---# #
 set $inner_gaps 15
-set $outer_gaps 15
+set $outer_gaps 12
 set $term --no-startup-id alacritty
 set $mod Mod4
 set $stoprec --no-startup-id dmenurecord kill
@@ -150,7 +150,7 @@ set $ws10 "10"
 
 # Assign Workspaces:
 assign [class="Brave"] $ws1
-assign [class="Chromium"] $ws1
+assign [class="Chromium"] $ws2
 assign [class="discord"] $ws8
 assign [class="obs"] $ws10
 for_window [class="Spotify"] move to workspace $ws9
