@@ -63,10 +63,8 @@ bindsym $mod+Shift+r		exec --no-startup-id winresize
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
 
-bindsym $mod+y			exec --no-startup-id flameshot gui -p /storage/pics/screenshots
-bindsym $mod+Shift+y		exec --no-startup-d flameshot full -p ~/myStuff/pics/screenshots
-#bindsym $mod+y			exec --no-startup-id fshoot
-#bindsym $mod+Shift+y		exec $term -e maim -i $(xdotool getactivewindow) /storage/screenshots/$(date +%s).png
+bindsym $mod+y			exec --no-startup-id flameshot gui -p ~/Pics/screenshots
+bindsym $mod+Shift+y		exec --no-startup-d flameshot full -p ~/Pics/screenshots
 
 bindsym $mod+u			exec --no-startup-id ddspawn tmuxdd
 bindsym $mod+Shift+u		exec --no-startup-id i3resize down
@@ -115,6 +113,7 @@ bindsym $mod+Shift+c		exec --no-startup-id camtoggle
 bindsym $mod+v			exec --no-startup-id $term -e nvim
 #bindsym $mod+Shift+v
 
+bindsym $mod+b			exec --no-startup-id brave
 bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id hover left
 
 bindsym $mod+n			exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)

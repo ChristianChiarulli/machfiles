@@ -9,6 +9,9 @@ xset s off
 xset -dpms
 xset s noblank
 
+# add local binaries
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+
 # Faster key repeat and delay
 xset r rate 210 40
 
@@ -19,13 +22,12 @@ xbanish &
 flameshot &
 
 # Wallpaper
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+setbg ~/Pics/wallpapers
 
 # Save your eyes
 redshift & 
 #redshift-gtk & 
 
-setbg /storage/pics/wallpapers
 
 # You don't need this and I should write a script to fix it
 echo "connect 08:EB:ED:E2:A0:4D" | bluetoothctl
