@@ -2,10 +2,6 @@
 # Path to your oh-my-zsh installation.
 #export GTK_THEME=Adwaita:dark
 export ZSH="/home/$USER/.oh-my-zsh"
-export LANG=en_US.UTF-8
-export PATH=$PATH:~/.scripts
-export PATH=$PATH:~/.local/bin
-export PATH=$HOME/.miniconda/envs/jupyter-lab/bin:$PATH
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -18,10 +14,6 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:$HOME/.scripts
-export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="brave"
 
 if [[ "$TTY" = "/dev/tty1" ]]; then
   pgrep i3 || startx
@@ -42,6 +34,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -83,9 +76,12 @@ alias wallpapers="sxiv /storage/pics/wallpapers"
 alias list_systemctl="systemctl list-unit-files --state=enabled"
 alias kill_jupyter="killall jupyter-lab"
 alias set_python_path="source set_python_path"
+alias cat="ccat"
+alias greeter="dm-tool switch-to-greeter"
 
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
+export PROMPT_COMMAND="pwd > /tmp/whereami"
 
 # Junk added by robot
 

@@ -6,6 +6,8 @@
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # #---Basic Definitions---# #
+smart_gaps on
+smart_borders on
 set $inner_gaps 15
 set $outer_gaps 12
 set $term --no-startup-id alacritty
@@ -16,10 +18,22 @@ set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
 # #---Gaps---# #
 for_window [class="^.*"] border pixel 2
 gaps inner $inner_gaps
 gaps outer $outer_gaps
+
+# Window borders
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
+
 
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
@@ -33,16 +47,15 @@ for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
+
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec alacritty
-bindsym $mod+Shift+Return	exec --no-startup-id samedir
+bindsym $mod+Shift+Return	exec --no-startup-id alacritty --working-directory  $(xcwd)
 
 bindsym $mod+space		focus mode_toggle
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
 
 bindsym $mod+Escape 	floating toggle
-bindsym $mod+Shift+Escape	exec --no-startup-id prompt "Exit i3?" "i3 exit"
+bindsym $mod+Shift+Escape	exec --no-startup-id dm-tool switch-to-greeter
 
 # bindsym $mod+BackSpace
 bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Reboot computer?" "$reboot"
@@ -51,7 +64,7 @@ bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Reboot computer?" "$re
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
-bindsym $mod+w 			exec --no-startup-id rofi -show window  -theme onedarker
+bindsym $mod+w 			exec --no-startup-id rofi -show window  -theme sidetab-adapta
 bindsym $mod+Shift+w		exec $term -e nmtui
 
 bindsym $mod+e			exec $term -e neomutt && pkill -RTMIN+12 i3blocks
@@ -114,7 +127,7 @@ bindsym $mod+v			exec --no-startup-id $term -e nvim
 #bindsym $mod+Shift+v
 
 bindsym $mod+b			exec --no-startup-id brave
-bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id hover left
+bindsym $mod+Shift+b		sticky toggle;
 
 bindsym $mod+n			exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
 bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id hover right
@@ -153,6 +166,7 @@ assign [class="Chromium"] $ws2
 assign [class="discord"] $ws8
 assign [class="obs"] $ws10
 for_window [class="Spotify"] move to workspace $ws9
+for_window [title=".*Emulator.*"] floating enable
 
 # switch to workspace
 bindsym $mod+1		workspace $ws1

@@ -107,8 +107,6 @@ modules-left = i3 xwindow
 modules-center = spotify1
 modules-right = networkspeedup networkspeeddown sep memory2 sep cpu2 sep pacman-updates sep pavolume sep date
 
-separator = 
-
 ;dim-value = 1.0
 
 tray-position = right

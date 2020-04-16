@@ -1,3 +1,32 @@
+
+.AndroidStudio3.6/
+.android/
+.config/**/Android Open Source Project/
+.config/**/Android/
+.config/**/Mailspring/
+.config/**/QtProject.conf
+.config/**/Unknown Organization/
+.config/**/VirtualBox/
+.config/**/balena-etcher-electron/
+.config/**/dolphin-emu/
+.config/fish/
+.config/fontconfig/
+.config/glava/
+.config/**/kdenliverc
+mimeapps.list
+.config/**/omf/
+.config/**/privateinternetaccess/
+.config/**/volumeicon/
+.config/**/zoomus.conf
+.dmrc
+.emulator_console_auth_token
+.gradle/
+.java/
+.node_repl_history
+.python_hue
+.vscode/
+.zoom/
+Stuff/
 .cache/
 .pcloud/
 .config/**/BraveSoftware/
@@ -61,3 +90,5 @@ Blog/
 .oh-my-zsh
 .NERDTreeBookmarks
 .python_history
+Blog
+Pics

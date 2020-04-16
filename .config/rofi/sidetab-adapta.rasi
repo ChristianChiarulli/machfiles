@@ -12,11 +12,11 @@ configuration {
 }
 
 * {
-        background-color:           #222d32;
+        background-color:           #1e1c1599;
         text-color:                 #ffffff;
 
-        accent-color:               #00bcd4;
-        accent2-color:              #4db6ac;
+        accent-color:               #61afef;
+        accent2-color:              #d19a66;
         hover-color:                #39454b;
         urgent-color:               #ff5252;
         window-color:               #ffffff;
@@ -40,7 +40,7 @@ configuration {
 #window {
         anchor:   west;
         location: west;
-        width:    384px;
+        width:    500px;
         height:   100%;
 }
 

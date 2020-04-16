@@ -1,8 +1,14 @@
+# nm-applet
+nm-applet --indicator &
+
 # Starting compositor
 picom -b
 
 # Notification center
 deadd-notification-center &
+
+# Bluetooth
+blueman-applet &
 
 # Stop screen from going blank
 xset s off
@@ -25,9 +31,25 @@ flameshot &
 setbg ~/Pics/wallpapers
 
 # Save your eyes
-redshift & 
-#redshift-gtk & 
+#redshift & 
+redshift-gtk & 
 
 
 # You don't need this and I should write a script to fix it
 echo "connect 08:EB:ED:E2:A0:4D" | bluetoothctl
+
+export LANG=en_US.UTF-8
+export PATH=$PATH:~/.scripts
+export PATH=$PATH:~/.local/bin
+export PATH=$HOME/.miniconda/envs/jupyter-lab/bin:$PATH
+export PATH=$PATH:$HOME/.scripts
+
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="brave"
+
+export ANDROID_HOME=$HOME/.config/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
