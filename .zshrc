@@ -2,9 +2,12 @@
 # Path to your oh-my-zsh installation.
 #export GTK_THEME=Adwaita:dark
 export ZSH="/home/$USER/.oh-my-zsh"
+export TF_FORCE_GPU_ALLOW_GROWTH=true
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
+
+zle_highlight=('paste:none')
 
 # Which plugins would you like to load?
 plugins=(
@@ -22,13 +25,16 @@ fi
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nvim'
  else
-   export EDITOR='vi'
+   export EDITOR='nvim'
  fi
 
 #autoload -U colors && colors
 export CLICOLOR=1
-PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]%}]%{$reset_color%}%  %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%\c%{$fg[red]%}@%{$fg[white]%}%\m%{$fg[blue]%}]%{$reset_color%}%  %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} '
+#
+#
+
 #PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
@@ -78,10 +84,16 @@ alias kill_jupyter="killall jupyter-lab"
 alias set_python_path="source set_python_path"
 alias cat="ccat"
 alias greeter="dm-tool switch-to-greeter"
+alias small_text="sed -i 's/size: 22.0/size: 15.0/g' ~/.config/alacritty/alacritty.yml"
+alias big_text="sed -i 's/size: 15.0/size: 22.0/g' ~/.config/alacritty/alacritty.yml"
+alias logout="dm-tool switch-to-greeter"
+alias i3-logout="i3-msg exit"
+alias monitors="xrandr -q | grep " connected" | cut -d ' ' -f1"
+alias random_background="feh --bg-fill --randomize ~/Pics/wallpapers/*"
 
 # Include hidden files in autocomplete:
-_comp_options+=(globdots)
-export PROMPT_COMMAND="pwd > /tmp/whereami"
+# _comp_options+=(globdots)
+# export PROMPT_COMMAND="pwd > /tmp/whereami"
 
 # Junk added by robot
 
@@ -108,3 +120,12 @@ source /home/$USER/.config/broot/launcher/bash/br
 # fnm
 export PATH=/home/$USER/.fnm:$PATH
 eval "`fnm env --multi`"
+
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+#export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'
+#export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"

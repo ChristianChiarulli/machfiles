@@ -5,7 +5,7 @@
  * Author: Chris
  */
 configuration {
-        modi: "drun,window";
+        modi: "";
         show-icons:   true;
         /*kb-mode-next: "Tab";*/
 }
@@ -33,7 +33,7 @@ window {
 }
 
 mainbox {
-	children: [inputbar, message, mode-switcher, listview];
+	children: [inputbar, message,  listview];
 	spacing: 30px;
 	padding: 30px 0;
   border: 1px;
@@ -47,6 +47,7 @@ inputbar {
 
 prompt {
 	text-color: @blue;
+  enabled: false;
 }
 
 textbox-prompt-colon {
@@ -64,10 +65,10 @@ case-indicator {
 	text-color: @red;
 }
 
-mode-switcher, message {
-	border: 1px 0;
-	border-color: @blue;
-}
+/*mode-switcher, message {*/
+	/*border: 1px 0;*/
+	/*border-color: @blue;*/
+/*}*/
 
 button, textbox {
 	background-color: @magenta;
@@ -80,7 +81,7 @@ button selected {
 }
 
 listview {
-  scrollbar: true;
+  /*scrollbar: true;*/
 	margin: 0 10px 0 30px;
 }
 

@@ -28,20 +28,16 @@ xbanish &
 flameshot &
 
 # Wallpaper
-setbg ~/Pics/wallpapers
+feh --bg-fill --randomize ~/Pics/wallpapers/* &
 
 # Save your eyes
 #redshift & 
 redshift-gtk & 
 
-
-# You don't need this and I should write a script to fix it
-echo "connect 08:EB:ED:E2:A0:4D" | bluetoothctl
-
 export LANG=en_US.UTF-8
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:~/.local/bin
-export PATH=$HOME/.miniconda/envs/jupyter-lab/bin:$PATH
+#export PATH=$HOME/.miniconda/envs/jupyter-lab/bin:$PATH
 export PATH=$PATH:$HOME/.scripts
 
 export EDITOR="nvim"
