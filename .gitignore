@@ -7,6 +7,14 @@
 .config/**/QtProject.conf
 .config/**/Unknown Organization/
 .config/**/VirtualBox/
+.config/**/polybar-8/
+.config/**/htop/
+.links/
+.w3m/
+.wget-hsts
+go/
+.viminfo
+.config/**/jesseduffield/
 .config/**/balena-etcher-electron/
 .config/**/dolphin-emu/
 .config/fish/

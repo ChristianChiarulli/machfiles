@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+import i3ipc
+from i3ipc import Event
+
+EXCLUDE = ['Synapse']
+# NEVER_BORDER = ['XXX', '*Brave*' 'Alacritty']
+BORDER = ['Alacritty']
+
+
+def on_float(i3, e):
+    print(e.container.name)
+    print(e.win_container)
+    # if e.container not in NEVER_BORDER:
+    #     e.container.command('border normal')
+
+    if e.container in BORDER:
+        e.container.command('border normal')
+
+    for con in i3.get_tree():
+        if con.floating != 'user_on' and con.floating != 'auto_on' and con.window_class not in EXCLUDE:
+            con.command('border none')
+    # Normal border for focused container, even if floating:
+
+
+def on_tile(i3, e):
+    e.container.command('border none')
+
+
+i3 = i3ipc.Connection()
+i3.on('window::floating', on_float)
+i3.main()

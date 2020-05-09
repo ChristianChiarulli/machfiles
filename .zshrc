@@ -90,6 +90,8 @@ alias logout="dm-tool switch-to-greeter"
 alias i3-logout="i3-msg exit"
 alias monitors="xrandr -q | grep " connected" | cut -d ' ' -f1"
 alias random_background="feh --bg-fill --randomize ~/Pics/wallpapers/*"
+alias sk="screenkey -s small --scr 1"
+alias skk="killall screenkey"
 
 # Include hidden files in autocomplete:
 # _comp_options+=(globdots)
@@ -126,6 +128,7 @@ export MANWIDTH=999
 
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
-#export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
 #export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-#export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+alias lg='lazygit'

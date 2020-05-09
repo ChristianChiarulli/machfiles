@@ -95,7 +95,8 @@ bindsym $mod+Shift+a		exec $term -e alsamixer
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d 			exec --no-startup-id rofi -show drun  -theme onedarker
+# bindsym $mod+d 			exec --no-startup-id rofi -show drun  -theme onedarker
+bindsym $mod+d 			exec --no-startup-id rofi-menu
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f			fullscreen toggle
@@ -219,8 +220,8 @@ bindsym $mod+F5		exec --no-startup-id $netrefresh
 bindsym $mod+F6		exec --no-startup-id torwrap
 bindsym $mod+F7		exec --no-startup-id td-toggle
 bindsym $mod+F8		exec --no-startup-id mailsync
-bindsym $mod+F9		exec --no-startup-id dmenumount
-bindsym $mod+F10	exec --no-startup-id dmenuumount
+bindsym $mod+F9		exec --no-startup-id screenkey -s small --scr 1
+bindsym $mod+F10	exec --no-startup-id killall screenkey
 bindsym $mod+F11	exec --no-startup-id ducksearch
 bindsym $mod+F12	exec $term -e nmtui
 bindsym $mod+Shift+F1	exec --no-startup-id toggle-welcome
@@ -251,6 +252,8 @@ bindsym $mod+greater		exec --no-startup-id mpc next
 bindsym $mod+Shift+greater	exec --no-startup-id mpc next
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% #decrease sound volume
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume +10% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume -10% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound

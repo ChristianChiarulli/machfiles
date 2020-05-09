@@ -29,15 +29,16 @@ configuration {
 window {
 	transparency: "real";
 	/*fullscreen: true;*/
-	background-color: #1E2127EA; /*black + CC (80% opacity)*/
+	/* background-color: #1E2127EA; /*black + CC (80% opacity)*/*/
+	background-color: #222222EA; /*black + CC (80% opacity)*/
 }
 
 mainbox {
 	children: [inputbar, message,  listview];
 	spacing: 30px;
 	padding: 30px 0;
-  border: 1px;
-	border-color: @blue;
+  /* border: 1px; */
+	/* border-color: @blue; */
 }
 
 inputbar {
@@ -52,9 +53,10 @@ prompt {
 
 textbox-prompt-colon {
 	expand: false;
-	str: ":";
-	margin: 0 1ch 0 0;
+	str: "";
+	margin: -1ch 1ch -2ch 0;
 	text-color: @blue;
+	font: "Fira Code 30";
 }
 
 entry {
