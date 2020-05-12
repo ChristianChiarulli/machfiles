@@ -2,42 +2,39 @@
 colors:
   # Default colors
   primary:
-    background: '#1e2127'
-    foreground: '#abb2bf'
+    background: "#1e2127"
+    foreground: "#abb2bf"
     #
   # Normal colors
   normal:
-    black:   '#1e2127'
-    red:     '#e06c75'
-    green:   '#98c379'
-    yellow:  '#d19a66'
-    blue:    '#61afef'
-    magenta: '#c678dd'
-    cyan:    '#56b6c2'
-    white:   '#abb2bf'
+    black: "#1e2127"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#d19a66"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#abb2bf"
 
   # Bright colors
   bright:
-    black:   '#5c6370'
-    red:     '#e06c75'
-    green:   '#98c379'
-    yellow:  '#d19a66'
-    blue:    '#61afef'
-    magenta: '#c678dd'
-    cyan:    '#56b6c2'
-    white:   '#ffffff'
+    black: "#5c6370"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#d19a66"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#ffffff"
 
 background_opacity: 1.0
 
-
 font:
-
   normal:
-
-    family: 'Fira Code'
+    family: "Fira Code"
     style: Regular
 
-# Point size
+  # Point size
   size: 15.0
 
   offset:
@@ -45,7 +42,6 @@ font:
     y: 0
 
 window:
-
   padding:
     x: 2
     y: 2
@@ -63,7 +59,7 @@ scrolling:
 draw_bold_text_with_bright_colors: true
 
 selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
 
   # When set to `true`, selected text will be copied to both the primary and
   # the selection clipboard. Otherwise, it will only be copied to the selection
@@ -74,10 +70,10 @@ selection:
 live_config_reload: true
 
 key_bindings:
-  - { key: V,        mods: Control|Shift,           action: Paste            }
-  - { key: C,        mods: Control|Shift,           action: Copy             }
-  - { key: Key0,     mods: Control,                 action: ResetFontSize    }
-  - { key: Equals,   mods: Control,                 action: IncreaseFontSize }
-  - { key: Add,      mods: Control,                 action: IncreaseFontSize }
-  - { key: Subtract, mods: Control,                 action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,                 action: DecreaseFontSize }
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Add, mods: Control, action: IncreaseFontSize }
+  - { key: Subtract, mods: Control, action: DecreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
