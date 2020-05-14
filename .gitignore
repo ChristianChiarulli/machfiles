@@ -8,6 +8,10 @@
 .config/**/VirtualBox/
 .config/**/polybar-8/
 .config/**/htop/
+.config/Insomnia/
+.config/google-chrome/
+.docker/
+.local/bin/fnm
 .links/
 .w3m/
 .wget-hsts
