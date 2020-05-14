@@ -1,6 +1,4 @@
 # ZSH config
-export ZSH="/home/$USER/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 [ -f $HOME/.config/zsh/exports.zsh ] && source $HOME/.config/zsh/exports.zsh
 [ -f $HOME/.config/zsh/prompt.zsh ] && source $HOME/.config/zsh/prompt.zsh
 [ -f $HOME/.config/zsh/aliases.zsh ] && source $HOME/.config/zsh/aliases.zsh
@@ -15,3 +13,7 @@ source $ZSH/oh-my-zsh.sh
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
+# fnm
+export PATH=/home/chris/.local/fnm:$PATH
+eval "`fnm env --multi`"

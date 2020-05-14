@@ -10,9 +10,9 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
-
 export ZSH="/home/$USER/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
+
 # export
 export TF_FORCE_GPU_ALLOW_GROWTH=true
 # Preferred editor for local and remote sessions
