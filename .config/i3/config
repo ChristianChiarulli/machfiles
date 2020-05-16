@@ -12,10 +12,13 @@ set $inner_gaps 15
 set $outer_gaps 12
 set $term --no-startup-id alacritty
 set $mod Mod4
+set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $hibernate sudo -A systemctl suspend
+set $lock i3lock
+set $suspend sudo systemctl suspend
+set $hibernate sudo -A systemctl hibernate
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -26,87 +29,119 @@ gaps inner $inner_gaps
 gaps outer $outer_gaps
 
 # #---Basic Bindings---# #
-bindsym $mod+Return 		         exec alacritty
-bindsym $mod+Shift+Return	       exec --no-startup-id alacritty --working-directory  $(xcwd)
+bindsym $mod+Return 		         exec $term
+bindsym $mod+Shift+Return	       exec $term --working-directory  $(xcwd)
 
-bindsym $mod+Escape 	           floating toggle
-bindsym $mod+Shift+Escape	       exec --no-startup-id dm-tool switch-to-greeter
+bindsym $mod+Escape	             exec --no-startup-id dm-tool switch-to-greeter
+bindsym $mod+Shift+Escape	       exec --no-startup-id $hibernate
 
 # bindsym $mod+BackSpace
-bindsym $mod+Shift+BackSpace	   exec --no-startup-id prompt "Reboot computer?" "$reboot"
+# bindsym $mod+Shift+BackSpace	   exec --no-startup-id prompt "Reboot computer?" $reboot
+
+# space
+bindsym $mod+space 			            exec --no-startup-id rofi-menu 
+
 
 # #---Letter Key Bindings---# #
 bindsym $mod+q			            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		        [con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
+# w
 bindsym $mod+w 			            exec --no-startup-id brave
 
 # e
+bindsym $mod+e 			            exec --no-startup-id $lock
+bindsym $mod+Shift+e		        exec --no-startup-id $suspend
 
+# r
 bindsym $mod+r 			            exec $term -e ranger
 bindsym $mod+Shift+r		        exec --no-startup-id winresize
 
-bindsym $mod+t 			            exec $term -e gotop
+# t
+bindsym $mod+t 			            exec $term -e ytop
+bindsym $mod+Shift+t            focus mode_toggle
 
+# y
 bindsym $mod+y			            exec --no-startup-id flameshot gui -p ~/Pics/screenshots
-bindsym $mod+Shift+y		        exec --no-startup-d flameshot full -p ~/Pics/screenshots
+bindsym $mod+Shift+y		        exec --no-startup-id flameshot full -p ~/Pics/screenshots
 
 # u
+bindsym $mod+u                  [urgent=latest] focus
 
 # i
+bindsym $mod+i                  fullscreen disable; floating enable; resize set 500 300; sticky enable; move position 4610 1130
 
 # o
+bindsym $mod+o			            exec --no-startup-id $term -e nvim ~/Repos/blog/content
+# bindsym $mod+Shift			        exec --no-startup-id $term -e nvim ~/Repos
 
+# a
 bindsym $mod+a		              exec $term -e alsamixer
 
+# s
 bindsym $mod+s        			    sticky toggle;
 bindsym $mod+Shift+s			      split toggle
 
-bindsym $mod+d 			            exec --no-startup-id rofi-menu 
+# d
+bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop
 
+# f
 bindsym $mod+f			            fullscreen toggle
 bindsym $mod+Shift+f 	          floating toggle
 
+# g
 bindsym $mod+g		              gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
 bindsym $mod+Shift+g		        gaps inner current set 0; gaps outer current set 0
 
+# h
 bindsym $mod+h			            focus left
 bindsym $mod+Shift+h		        move left 30
 bindsym $mod+Ctrl+h		          move workspace to output left
 
+# j
 bindsym $mod+j			            focus down
 bindsym $mod+Shift+j		        move down 30
 bindsym $mod+Ctrl+j		          move workspace to output down
 
+# k
 bindsym $mod+k			            focus up
 bindsym $mod+Shift+k		        move up 30
 bindsym $mod+Ctrl+k		          move workspace to output up
 
+# l
 bindsym $mod+l			            focus right
 bindsym $mod+Shift+l		        move right 30
 bindsym $mod+Ctrl+l		          move workspace to output right
 
-# bindsym $mod+semicolon			    sticky toggle;
+bindsym $mod+semicolon 			    exec --no-startup-id skippy-xd
 
 # z
+bindsym $mod+z			            exec --no-startup-id $term -e nvim ~/.zshrc
 
 # x
+bindsym $mod+x 			            exec --no-startup-id $reboot
+bindsym $mod+Shift+x		        exec --no-startup-id $shutdown
 
+# c
 bindsym $mod+c			            exec --no-startup-id picom -b
 bindsym $mod+Shift+c		        exec --no-startup-id killall picom
 
+# v
 bindsym $mod+v			            exec --no-startup-id $term -e nvim
 
-bindsym $mod+b			            exec --no-startup-id random_background;
+# b
+bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pics/wallpapers/*
 
+# n
 bindsym $mod+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
 
+# m
 bindsym $mod+m		              exec --no-startup-id spotify
 bindsym $mod+Shift+m		        exec --no-startup-id discord
 
+
 # #---Workspace Bindings---# #
 bindsym $mod+Tab		            exec --no-startup-id rofi -show window  -theme onedarker
-bindsym $mod+space 			        exec --no-startup-id skippy-xd
 bindsym $mod+Shift+Tab		      workspace next
 bindsym $mod+apostrophe		      split horizontal ;; exec $term
 bindsym $mod+slash		          split vertical ;; exec $term
@@ -128,8 +163,8 @@ set $ws10 "10"
 assign [class="Brave"] $ws1
 assign [class="Chromium"] $ws2
 assign [class="discord"] $ws8
-assign [class="obs"] $ws10
 for_window [class="Spotify"] move to workspace $ws9
+assign [class="obs"] $ws10
 
 # Assing autofloat
 for_window [title=".*Emulator.*"] floating enable

@@ -31,8 +31,17 @@ background_opacity: 1.0
 
 font:
   normal:
-    family: "Fira Code"
+    family: "Hack"
     style: Regular
+  bold:
+    family: "Hack"
+    style: Bold
+  italic:
+    family: "Hack"
+    style: Italic
+  bold_italic:
+    family: "Hack"
+    style: Bold Italic
 
   # Point size
   size: 22.0

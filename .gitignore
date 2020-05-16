@@ -11,6 +11,7 @@
 .config/Insomnia/
 .config/google-chrome/
 .docker/
+workspace/
 .local/bin/fnm
 .links/
 .w3m/

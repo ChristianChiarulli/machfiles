@@ -68,7 +68,6 @@ jdk8-openjdk
 jq
 jupyterlab
 kdenlive
-lastpass
 lastpass-cli
 lazydocker
 lazygit
@@ -90,6 +89,7 @@ mpv
 mtools
 nautilus
 nautilus-bluetooth
+ncdu
 neofetch
 neovide
 neovim
@@ -100,6 +100,7 @@ networkmanager-dmenu-git
 newsboat
 nitrogen
 nmap
+nnn
 noto-fonts-emoji
 ntfs-3g
 nvidia
@@ -138,6 +139,7 @@ termite
 the_silver_searcher
 thunderbird
 tmux
+tree
 ttf-font-awesome
 universal-ctags-git
 unzip
@@ -162,6 +164,7 @@ xsel
 xterm
 xwallpaper
 yay
+ytop
 zathura
 zathura-pdf-mupdf
 zoom
