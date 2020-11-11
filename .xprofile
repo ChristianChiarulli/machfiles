@@ -49,3 +49,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# monitor layout
+# xrandr --auto --output DVI-D-0 --mode 2560x1440 --right-of DP-0
