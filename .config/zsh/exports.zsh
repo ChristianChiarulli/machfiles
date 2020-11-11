@@ -1,4 +1,3 @@
-
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
@@ -6,7 +5,6 @@ zle_highlight=('paste:none')
 
 # Which plugins would you like to load?
 plugins=(
-  git
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
@@ -28,3 +26,9 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
+
+# fnm
+export PATH=/home/$USER/.local/bin/fnm:$PATH
+export PATH=/home/$USER/.cargo/bin$PATH
+eval "`fnm env --multi`"
+eval "$(zoxide init zsh)"

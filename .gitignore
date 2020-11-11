@@ -1,8 +1,42 @@
 .AndroidStudio3.6/
 .android/
+.cling_history
 .config/**/Android Open Source Project/
+.config/**/Code - Insiders/
 .config/**/Android/
+.config/**/VSCodium/
 .config/**/Mailspring/
+.config/**/TabNine/
+.config/**/blender/
+.config/**/cef_user_data/
+.config/**/fvim/
+.config/**/pipewire-media-session/
+.config/**/qtile/
+.config/**/kritarc
+.config/**/kritadisplayrc
+.config/**/shadobar/
+.config/**/screenkey.json
+.config/**/demu/
+.config/**/dwm/
+.config/**/st/
+.gnome/
+.kite/
+.lemminx/
+.pulse-cookie
+.python_history*
+.gist-vim
+.viminfo.tmp
+.steam*
+.lc/
+.luambenvs/
+.steam/
+.m2/
+.electron-gyp/
+.tooling/
+.nuget/
+.sdkman/
+.vscode-oss/
+.vscode-insiders/
 .config/**/QtProject.conf
 .config/**/Unknown Organization/
 .config/**/VirtualBox/
@@ -13,6 +47,7 @@
 .docker/
 workspace/
 .local/bin/fnm
+.local/bin/*
 .links/
 .w3m/
 .wget-hsts

@@ -11,7 +11,3 @@ function zle-keymap-select {
     echo -ne '\e[5 q'
   fi
 }
-
-# if [[ "$TTY" = "/dev/tty1" ]]; then
-#   pgrep i3 || startx
-# fi

@@ -1,12 +1,8 @@
 #!/bin/bash
 
-# BORDER="#383C4A"
-# SEPARATOR="#383C4A"
 BORDER="#2F3136"
 SEPARATOR="#2F3136"
 FOREGROUND="#B0B0B0"
-# BACKGROUND="#383C4A"
-# BACKGROUND_ALT="#3C4150"
 BACKGROUND="#2F3136"
 BACKGROUND_ALT="#36393F"
 HIGHLIGHT_BACKGROUND="#476B99"
@@ -37,7 +33,7 @@ LIGHT_GREEN="#7cb342"
 
 # Launch Rofi
 rofi -no-lazy-grab -show drun \
--display-drun " " -drun-display-format "{name}" \
+-display-drun "  " -drun-display-format "{name}" \
 -hide-scrollbar true \
 -bw 0 \
 -lines 10 \
@@ -54,8 +50,8 @@ rofi -no-lazy-grab -show drun \
 -color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND"
 
 # More Options
-# -fullscreen \
 # -xoffset 10 -yoffset 40 \
+# -fullscreen \
 # -location 1 \
 
 # Theming help
