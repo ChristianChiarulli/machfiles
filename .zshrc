@@ -9,23 +9,20 @@
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# path to the directory with environments
+export LUAMB_DIR=$HOME/.luambenvs
 
+# optional variables:
+export LUAMB_LUA_DEFAULT='lua 5.3'     # default Lua version
+export LUAMB_LUAROCKS_DEFAULT=latest   # default LuaRocks version
+LUAMB_DISABLE_COMPLETION=true          # disable shell completions
+LUAMB_PYTHON_BIN=/usr/bin/python3      # explicitly set Python executable
 
-# fnm
-export PATH=/home/chris/.local/fnm:$PATH
-eval "`fnm env --multi`"
+# make some magic
+source <(luamb shellsrc)
+# or if luamb executable is not in PATH:
+source <("$LUAMB_PYTHON_BIN" -m luamb shellsrc)
 
-codi() {
-  local syntax="${1:-python}"
-  shift
-  nvim -c \
-    "let g:startify_disable_at_vimenter = 1 |\
-    set bt=nofile ls=0 noru nonu nornu |\
-    hi ColorColumn ctermbg=NONE |\
-    hi VertSplit ctermbg=NONE |\
-    hi NonText ctermfg=0 |\
-    Codi $syntax" "$@"
-}
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/chris/.sdkman"
+[[ -s "/home/chris/.sdkman/bin/sdkman-init.sh" ]] && source "/home/chris/.sdkman/bin/sdkman-init.sh"
