@@ -15,7 +15,6 @@ set $mod Mod4
 set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
-set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $lock i3lock
 set $suspend sudo systemctl suspend
 set $hibernate sudo -A systemctl hibernate
@@ -49,9 +48,13 @@ bindsym $mod+Shift+q		        [con_id="__focused__" instance="^(?!dropdown_).*$"
 # w
 bindsym $mod+w 			            exec --no-startup-id brave
 
+# c
+bindsym $mod+c 			            exec --no-startup-id lock
+bindsym $mod+Shift+c		        exec --no-startup-id $suspend
+
 # e
-bindsym $mod+e 			            exec --no-startup-id $lock
-bindsym $mod+Shift+e		        exec --no-startup-id $suspend
+bindsym $mod+e 			            exec --no-startup-id code-insiders -n
+bindsym $mod+Shift+e		        exec $term -e code-insiders
 
 # r
 bindsym $mod+r 			            exec $term -e ranger
@@ -69,7 +72,7 @@ bindsym $mod+Shift+y		        exec --no-startup-id flameshot full -p ~/Pics/scre
 bindsym $mod+u                  [urgent=latest] focus
 
 # i
-bindsym $mod+i                  fullscreen disable; floating enable; resize set 500 300; sticky enable; move position 4610 1130
+bindsym $mod+i                  fullscreen disable; floating enable; resize set 300 200; sticky enable; move position 4792 53
 
 # o
 bindsym $mod+o			            exec --no-startup-id $term -e nvim ~/Repos/blog/content
@@ -83,7 +86,7 @@ bindsym $mod+s        			    sticky toggle;
 bindsym $mod+Shift+s			      split toggle
 
 # d
-bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -b -i'
 
 # f
 bindsym $mod+f			            fullscreen toggle
@@ -122,12 +125,12 @@ bindsym $mod+z			            exec --no-startup-id $term -e nvim ~/.zshrc
 bindsym $mod+x 			            exec --no-startup-id $reboot
 bindsym $mod+Shift+x		        exec --no-startup-id $shutdown
 
-# c
-bindsym $mod+c			            exec --no-startup-id picom -b
-bindsym $mod+Shift+c		        exec --no-startup-id killall picom
+# p
+bindsym $mod+p			            exec --no-startup-id picom -b
+bindsym $mod+Shift+p		        exec --no-startup-id killall picom
 
 # v
-bindsym $mod+v			            exec --no-startup-id $term -e nvim
+bindsym $mod+v			            exec --no-startup-id mpv /dev/video0
 
 # b
 bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pics/wallpapers/*
@@ -201,7 +204,7 @@ for_window [window_role="GtkFileChooserDialog"] move position center
 
 # #---Function Buttons---# #
 bindsym $mod+F1		        restart
-bindsym $mod+F2		        exec --no-startup-id screenkey -s small --scr 1
+bindsym $mod+F2		        exec --no-startup-id screenkey -s small --scr 1 -p fixed -g 600x100+2573+1330 --opacity .9 --font-color white
 bindsym $mod+F3	          exec --no-startup-id killall screenkey
 bindsym $mod+F12	        exec $term -e nmtui
 
