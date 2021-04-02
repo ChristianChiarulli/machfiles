@@ -9,8 +9,8 @@ exec_always --no-startup-id autotiling
 smart_gaps on
 smart_borders on
 set $inner_gaps 15
-set $outer_gaps 12
-set $term --no-startup-id alacritty
+set $outer_gaps 0
+set $term --no-startup-id kitty
 set $mod Mod4
 set $alt Mod1
 set $shutdown sudo -A shutdown -h now
@@ -65,8 +65,8 @@ bindsym $mod+t 			            exec $term -e ytop
 bindsym $mod+Shift+t            focus mode_toggle
 
 # y
-bindsym $mod+y			            exec --no-startup-id flameshot gui -p ~/Pics/screenshots
-bindsym $mod+Shift+y		        exec --no-startup-id flameshot full -p ~/Pics/screenshots
+bindsym $mod+y			            exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
+bindsym $mod+Shift+y		        exec --no-startup-id flameshot full -p ~/Pictures/screenshots
 
 # u
 bindsym $mod+u                  [urgent=latest] focus
@@ -133,10 +133,11 @@ bindsym $mod+Shift+p		        exec --no-startup-id killall picom
 bindsym $mod+v			            exec --no-startup-id mpv /dev/video0
 
 # b
-bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pics/wallpapers/*
+bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/*
 
 # n
-bindsym $mod+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
+bindsym $mod+n			            exec --no-startup-id neovide
+bindsym $mod+Shift+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
 
 # m
 bindsym $mod+m		              exec --no-startup-id spotify
@@ -144,8 +145,9 @@ bindsym $mod+Shift+m		        exec --no-startup-id discord
 
 
 # #---Workspace Bindings---# #
-bindsym $mod+Tab		            exec --no-startup-id rofi-menu-windows
-bindsym $mod+Shift+Tab		      workspace next
+# bindsym $mod+Tab		            exec --no-startup-id rofi-menu-windows
+bindsym $mod+Tab		          workspace next
+bindsym $mod+Shift+Tab		      workspace previous
 bindsym $mod+apostrophe		      split horizontal ;; exec $term
 bindsym $mod+slash		          split vertical ;; exec $term
 bindsym $mod+Shift+slash	      kill
@@ -163,13 +165,13 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Assign Workspaces:
-assign [class="Brave"] $ws1
-assign [class="Chromium"] $ws2
+# assign [class="Brave"] $ws1
+# assign [class="Chromium"] $ws2
 assign [class="discord"] $ws8
 for_window [class="Spotify"] move to workspace $ws9
 assign [class="obs"] $ws10
 
-# Assing autofloat
+# Assigning autofloat
 for_window [title=".*Emulator.*"] floating enable
 
 # switch to workspace

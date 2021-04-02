@@ -7,6 +7,32 @@
 .config/**/VSCodium/
 .config/**/Mailspring/
 .config/**/TabNine/
+.config/**/flameshot/
+.config/**/Element-Nightly/
+.config/**/Electron/
+.config/**/GIMP/
+.config/**/Google/
+.config/**/Ledger\ Live/
+.config/**/Popcorn-Time/
+.config/**/Postman/
+.config/**/evolution/
+.config/**/Session/
+.config/**/MYKI/
+.config/**/lagrange/
+.yarnrc
+.xsession
+.surf/
+Cloud/
+Desktop/
+Videos/
+Documents/
+.luarocks/
+Pictures
+.config/**/Myki/
+.config/**/PCSX2/
+.config/**/Oxen\ Electron\ Wallet/
+.config/**/Signal\ Beta/
+.config/**/Signal/
 .config/**/blender/
 .config/**/cef_user_data/
 .config/**/fvim/
@@ -16,9 +42,14 @@
 .config/**/kritadisplayrc
 .config/**/shadobar/
 .config/**/screenkey.json
-.config/**/demu/
-.config/**/dwm/
-.config/**/st/
+.config/**/dmenu
+.config/**/dwm
+.config/**/st
+.config/st/*
+.rustup/
+.config/**/JetBrains/
+.librewolf/
+.node-gyp/
 .gnome/
 .kite/
 .lemminx/

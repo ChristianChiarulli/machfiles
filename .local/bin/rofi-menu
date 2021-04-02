@@ -42,7 +42,7 @@ rofi -no-lazy-grab -show drun \
 -width 40 \
 -columns 2 \
 -show-icons -icon-theme "Papirus" \
--font "Noto Sans 15" \
+-font "Noto Sans 17" \
 -color-enabled true \
 -color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \

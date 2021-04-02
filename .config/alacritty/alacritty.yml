@@ -29,6 +29,8 @@ colors:
     white: "#ECEFF4"
   # background_opacity: 1.0
 
+
+
 font:
   # The normal (roman) font face to use.
   normal:
@@ -82,4 +84,4 @@ key_bindings:
   # - { key: Add, mods: Control, action: IncreaseFontSize }
   # - { key: Subtract, mods: Control, action: DecreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: N, mods: Control, action: SpawnNewInstance }
+  # - { key: N, mods: Control, action: SpawnNewInstance }

@@ -26,9 +26,9 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
+export PATH=/home/$USER/.cargo/bin:$PATH
+export PATH=/home/$USER/.local/go/bin:$PATH
+export GOPATH=$HOME/.local/go
 
 # fnm
-export PATH=/home/$USER/.local/bin/fnm:$PATH
-export PATH=/home/$USER/.cargo/bin$PATH
-eval "`fnm env --multi`"
 eval "$(zoxide init zsh)"
