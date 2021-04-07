@@ -2,8 +2,6 @@
 
 ![machfiles image](./machfiles.png)
 
-These are the dotfiles you see in all of my videos
-
 ## Installing
 
 You will need `git` and GNU `stow`
