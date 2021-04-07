@@ -5,6 +5,7 @@ bluez
 bluez-utils
 brave-bin
 cava-git
+cmus
 colorpicker
 cups
 debtap
@@ -34,9 +35,11 @@ linux
 linux-firmware
 linux-headers
 lua-format
+lxappearance
 mtools
 nautilus
 ncdu
+ncmpcpp
 neofetch
 neovide
 neovim-remote
@@ -61,13 +64,16 @@ popcorntime-bin
 pulseaudio-bluetooth
 python-pip
 pywal-git
+qt5ct
 ranger
 reflector
+rofi
 ruby
 signal-desktop-beta-bin
 skippy-xd-git
 spotify
 stow
+tree
 ttf-jetbrains-mono
 ttf-joypixels
 ttf-ms-fonts
