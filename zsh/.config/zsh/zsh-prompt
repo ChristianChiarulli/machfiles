@@ -37,3 +37,4 @@ PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]
 PROMPT+="\$vcs_info_msg_0_ "
 # TODO look into this for more colors
 # https://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
+# also ascii escape codes
