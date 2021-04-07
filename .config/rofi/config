@@ -1,6 +1,0 @@
-configuration {
- modi: "window,drun,combi";
- theme: "onedarker";
- font: "Fira Code 15";
- combi-modi: "window,drun,ssh";
- }
