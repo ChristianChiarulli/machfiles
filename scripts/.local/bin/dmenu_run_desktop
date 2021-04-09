@@ -1,0 +1,8 @@
+#!/bin/sh
+run=$(
+(
+ls /usr/share/applications | awk -F '.desktop' ' { print $1}' -;
+ls ~/.local/share/applications | awk -F '.desktop' ' { print $1}' -;
+) | dmenu
+)
+gtk-launch $run
