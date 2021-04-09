@@ -304,33 +304,10 @@ entries_per_page = 20
 # DO NOT use the names from that site, just the hex codes.
 
 # Definitions:
-#   bg = background
-#   fg = foreground
 #   dl = download
 #   btn = button
-#   hdg = heading
 #   bkmk = bookmark
 #   modal = a popup window/box in the middle of the screen
-
-
-# EXAMPLES:
-# hdg_1 = "green"
-# hdg_2 = "#5f0000"
-
-# Available keys to set:
-
-# bg: background for pages, tab row, app in general
-# tab_num: The number/highlight of the tabs at the top
-# tab_divider: The color of the divider character between tab numbers: |
-# bottombar_label: The color of the prompt that appears when you press space
-# bottombar_text: The color of the text you type
-# bottombar_bg
-# scrollbar: The scrollbar that appears on the right for long pages
-
-# amfora_link: A link that Amfora supports viewing. For now this is only gemini://
-# foreign_link: HTTP(S), Gopher, etc
-# link_number: The silver number that appears to the left of a link
-# regular_text: Normal gemini text, and plaintext documents
 
 # btn_bg: The bg color for all modal buttons
 # btn_text: The text color for all modal buttons
@@ -368,9 +345,19 @@ fg = "#D8DEE9"
 # btn = button
 # bkmk = bookmark
 # modal = a popup window/box in the middle of the screen
-hdg_1 = "#B48EAD"
-hdg_2 = "#B48EAD"
-hdg_3 = "#B48EAD"
-preformatted_text = "#C68A75"
-list_text = "#A3BE8C"
-# quote_text
+hdg_1 = "#5e81ac"
+hdg_2 = "#5e81ac"
+hdg_3 = "#5e81ac"
+preformatted_text = "#D7BA7D"
+list_text = "#B48EAD"
+quote_text = "#A3BE8C"
+amfora_link = "#88c0d0"
+foreign_link = "#88c0d0"
+link_number = "#C68A75"
+bottombar_text = "#D8DEE9"
+bottombar_bg = "#4C566A"
+tab_num = "#4C566A"
+scrollbar = "#4C566A"
+tab_divider = "#bf616a"
+regular_text = "#D8DEE9"
+bottombar_label = "#D8DEE9"
