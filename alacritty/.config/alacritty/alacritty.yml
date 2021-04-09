@@ -1,4 +1,5 @@
 # Colors (One Darker)
+# Note I am using alacritty-ligatures until ligatures make it upstream
 colors:
   # Default colors
   primary:
@@ -7,52 +8,59 @@ colors:
 
   # Normal colors
   normal:
-    black: "#3B4252"
-    red: "#D54646"
-    green: "#23D18B"
+    black: "#4C566A"
+    red: "#bf616a"
+    green: "#A3BE8C"
     yellow: "#D7BA7D"
-    blue: "#569CD6"
-    magenta: "#C586C0"
-    cyan: "#29B8DB"
+    blue: "#5e81ac"
+    magenta: "#B48EAD"
+    cyan: "#88c0d0"
     white: "#abb2bf"
 
   # Bright colors
   bright:
-    black: "#3B4252"
-    red: "#D54646"
-    green: "#23D18B"
+    black: "#4C566A"
+    red: "#bf616a"
+    green: "#A3BE8C"
     yellow: "#D7BA7D"
-    blue: "#569CD6"
-    magenta: "#C586C0"
-    cyan: "#29B8DB"
-    white: "#ECEFF4"
+    blue: "#5e81ac"
+    magenta: "#B48EAD"
+    cyan: "#88c0d0"
+    white: "#abb2bf"
+
   # background_opacity: 1.0
 
+  # Change cursor colors
+  cursor:
+    text: "#3B4252"
+    cursor: "#ECEFF4"
+
 cursor:
-  text: "0x232731"
-  cursor: "0xECEFF4"
-
-
+  style:
+    blinking: Never
 
 font:
   # The normal (roman) font face to use.
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    family: monospace
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: JetBrainsMono Nerd Font Mono
+    family: monospace
     # Style can be specified to pick a specific face.
-    # style: Bold
+    style: Bold
 
   # The italic font face
   italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: monospace
     # Style can be specified to pick a specific face.
-    # style: Italic
-  size: 17.0
+    style: Italic
+
+  size: 16.0
+
+  ligatures: true
 
   offset:
     x: 0
@@ -72,6 +80,9 @@ window:
   #   # scrollback is enabled (history > 0).
   #   multiplier: 10
 
+# Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
   # # If `true`, bold text is drawn using the bright color variants.
   # draw_bold_text_with_bright_colors: true
 
@@ -84,7 +95,7 @@ key_bindings:
   - { key: C, mods: Control|Shift, action: Copy }
   - { key: Key0, mods: Control, action: ResetFontSize }
   - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
   # - { key: Add, mods: Control, action: IncreaseFontSize }
   # - { key: Subtract, mods: Control, action: DecreaseFontSize }
-  - { key: Minus, mods: Control, action: DecreaseFontSize }
   # - { key: N, mods: Control, action: SpawnNewInstance }
