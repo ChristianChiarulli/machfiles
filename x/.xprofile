@@ -20,8 +20,11 @@ xset r rate 210 40
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="kitty"
+export TERMINAL="st"
 export BROWSER="brave"
+
+# For QT Themes
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # XDG Paths
 export XDG_CONFIG_HOME=$HOME/.config
@@ -40,5 +43,16 @@ export ZDOTDIR=$HOME/.config/zsh
 # Screenshots
 flameshot &
 
+# Bluetooth systray icon
+blueman-applet &
+
+# helps with puls audio
+pasystray &
+
 # Easy file sharing
 pcloudcc -u chrisatmachine@gmail.com -m ~/Cloud -d
+
+# remap caps to escape
+setxkbmap -option caps:escape
+# swap escape and caps
+# setxkbmap -option caps:swapescape
