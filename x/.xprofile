@@ -52,6 +52,9 @@ pasystray &
 # Easy file sharing
 pcloudcc -u chrisatmachine@gmail.com -m ~/Cloud -d
 
+# Screenkey applet (this will break everything)
+# screenkey --start-disabled
+
 # remap caps to escape
 setxkbmap -option caps:escape
 # swap escape and caps
