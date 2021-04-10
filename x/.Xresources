@@ -1,7 +1,7 @@
 xterm*selectToClipboard: true
 xterm*disallowedWindowOps: 20,21,SetXProp
 *.font:	Monospace:pixelsize=25:antialias=true:autohint=true;
-*.alpha: 0.95
+/* *.alpha: 0.95 */
 ! st*geometry: 100x30
 
 ! colors
@@ -10,6 +10,7 @@ xterm*disallowedWindowOps: 20,21,SetXProp
 *.foreground:   #B8BEC9
 *.background:   #232731
 *.cursorColor:  #ECEFF4
+*.revCursorColor:  #555555
 
 ! black
 *.color0:       #4C566A
