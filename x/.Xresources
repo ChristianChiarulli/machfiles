@@ -1,0 +1,51 @@
+xterm*selectToClipboard: true
+xterm*disallowedWindowOps: 20,21,SetXProp
+*.font:	Monospace:pixelsize=25:antialias=true:autohint=true;
+*.alpha: 0.95
+! st*geometry: 100x30
+
+! colors
+
+! special
+*.foreground:   #B8BEC9
+*.background:   #232731
+*.cursorColor:  #ECEFF4
+
+! black
+*.color0:       #4C566A
+*.color8:       #6C768A
+
+! red
+*.color1:       #BF616A
+*.color9:       #BF616A
+/* *.color9:       #af7370 */
+
+! green
+*.color2:       #A3BE8C
+*.color10:       #A3BE8C
+/* *.color10:      #B5CEA8 */
+
+! yellow
+*.color3:       #D7BA7D
+*.color11:       #D7BA7D
+/* *.color11:      #E7cb93 */
+
+! blue
+*.color4:       #5e81ac
+*.color12:       #5e81ac
+/* *.color12:      #69A8C6 */
+
+! magenta
+*.color5:       #B48EAD
+*.color13:       #B48EAD
+/* *.color13:      #939ede */
+
+! cyan
+*.color6:       #88c0d0
+*.color14:       #88c0d0
+/* *.color14:      #69BAC8 */
+
+! white
+*.color7:       #ABB2BF
+*.color15:      #D8DEE9
+
