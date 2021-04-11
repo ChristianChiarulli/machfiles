@@ -1,6 +1,8 @@
 xterm*selectToClipboard: true
 xterm*disallowedWindowOps: 20,21,SetXProp
 *.font:	Monospace:pixelsize=25:antialias=true:autohint=true;
+*.fontalt0:Braille:pixelsize=24:antialias=true:autohint=true;
+/* *.fontalt1:JoyPixels:pixelsize=24:antialias=true:autohint=true; */
 *.alpha: 0.95
 
 ! colors
