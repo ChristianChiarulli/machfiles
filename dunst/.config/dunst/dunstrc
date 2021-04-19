@@ -1,4 +1,5 @@
 [global]
+    timeout = 10
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
@@ -324,8 +325,6 @@
     # dunstctl context
     # context = ctrl+shift+period
 
-[global]
-    timeout = 10
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.

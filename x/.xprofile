@@ -50,7 +50,7 @@ blueman-applet &
 pasystray &
 
 # Easy file sharing
-pcloudcc -u chrisatmachine@gmail.com -m ~/Cloud -d
+pcloudcc -u chris.machine@pm.me -m ~/Cloud -d
 
 # Screenkey applet (this will break everything)
 # screenkey --start-disabled

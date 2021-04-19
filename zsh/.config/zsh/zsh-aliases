@@ -1,5 +1,4 @@
 #!/bin/sh
-alias ls='ls --color=auto'
 alias j='z'
 alias f='zi'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
@@ -41,3 +40,21 @@ alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate ar
 
 # systemd
 alias list_systemctl="systemctl list-unit-files --state=enabled"
+
+case "$(uname -s)" in
+
+   Darwin)
+     # echo 'Mac OS X'
+     ;;
+
+   Linux)
+	alias ls='ls --color=auto'
+     ;;
+
+   CYGWIN*|MINGW32*|MSYS*|MINGW*)
+     echo 'MS Windows'
+     ;;
+   *)
+     # echo 'Other OS' 
+     ;;
+esac

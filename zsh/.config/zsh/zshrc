@@ -53,9 +53,10 @@ bindkey "^n" down-line-or-beginning-search # Down
 bindkey -r "^u"
 bindkey -r "^d"
 
-# FZF
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+# FZF 
+# TODO update for mac
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
 # Edit line in vim with ctrl-e:
