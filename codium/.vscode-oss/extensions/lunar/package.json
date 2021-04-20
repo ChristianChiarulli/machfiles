@@ -1,0 +1,21 @@
+{
+    "name": "lunar",
+    "displayName": "Lunar",
+    "description": "lunar colorscheme for chads",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.55.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Lunar",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Lunar-color-theme.json"
+            }
+        ]
+    }
+}
