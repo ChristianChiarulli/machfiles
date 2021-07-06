@@ -9,7 +9,7 @@ xterm*disallowedWindowOps: 20,21,SetXProp
 
 ! special
 *.foreground:   #B8BEC9
-*.background:   #232731
+*.background:   #212121
 *.cursorColor:  #ECEFF4
 *.revCursorColor:  #555555
 

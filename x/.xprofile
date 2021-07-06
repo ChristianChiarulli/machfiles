@@ -5,7 +5,7 @@ dwmblocks &
 feh --bg-fill --randomize ~/Pictures/wallpapers/* &
 
 # Monitor Config
-xrandr --auto --output DVI-D-0 --mode 2560x1440 --right-of HDMI-0
+xrandr --auto --output DVI-D-0 --mode 2560x1440 --left-of HDMI-0
 
 # Network Manager Applet
 nm-applet --indicator &
@@ -37,9 +37,6 @@ picom -b
 # Hide mouse when typing
 xbanish &
 
-# zsh config dir
-export ZDOTDIR=$HOME/.config/zsh
-
 # Screenshots
 flameshot &
 
@@ -62,3 +59,6 @@ setxkbmap -option caps:escape
 
 # load Xresources
 xrdb ~/.Xresources
+
+# zsh config dir
+export ZDOTDIR=$HOME/.config/zsh
