@@ -1,8 +1,8 @@
 {
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/vimscript/lv-vscode/init.vim",
-  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/vimscript/lv-vscode/init.vim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/utils/lv-vscode/init.vim",
+  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/utils/lv-vscode/init.vim",
   "whichkey.sortOrder": "alphabetically",
   "whichkey.delay": 0,
   "whichkey.bindings": [
@@ -971,7 +971,7 @@
   "gitlens.hovers.currentLine.over": "line",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "python.pythonPath": "/home/chris/.miniconda/envs/ds/bin/python",
+  "python.pythonPath": "/home/chris/.miniconda/envs/todo/bin/python",
   "workbench.list.automaticKeyboardNavigation": false,
   "oneDarkPro.editorTheme": "onedarkPro",
   "python.languageServer": "Pylance",
@@ -993,7 +993,7 @@
   "leetcode.defaultLanguage": "javascript",
   "leetcode.hint.configWebviewMarkdown": false,
   "leetcode.hint.commentDescription": false,
-"window.menuBarVisibility": "toggle",
+"window.menuBarVisibility": "compact",
   "python.condaPath": "$HOME/.miniconda/bin/conda",
   "python.formatting.provider": "black",
   "python.insidersChannel": "off",
@@ -1119,12 +1119,9 @@
   "editor.snippetSuggestions": "bottom",
   "editor.fontLigatures": true,
   "javascript.referencesCodeLens.enabled": true,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter-notebook",
-      "filenamePattern": "*.ipynb"
-    }
-],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
 "jupyter.alwaysTrustNotebooks": true,
 "jupyter.insidersChannel": "off",
 "debug.inlineValues": true,
@@ -1141,5 +1138,10 @@
   },
 ],
 "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/Users/cchiar706/.vscode-oss/extensions/gabrielbb.vscode-lombok-1.0.0/server/lombok.jar\"",
-"workbench.colorTheme": "Lunar",
+"redhat.telemetry.enabled": false,
+"security.workspace.trust.untrustedFiles": "open",
+"notebook.cellToolbarLocation": {
+  "default": "right",
+  "jupyter-notebook": "left"
+},
 }
