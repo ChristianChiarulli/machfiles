@@ -63,7 +63,6 @@ lightdm-slick-greeter
 linux
 linux-firmware
 linux-headers
-lua-format
 lxappearance
 mediainfo
 mpv
@@ -73,7 +72,7 @@ nautilus-bluetooth
 ncdu
 ncmpcpp
 neofetch
-neovide-git
+neovide-bin
 neovim
 neovim-remote
 nerd-fonts-jetbrains-mono
@@ -100,6 +99,7 @@ pcloudcc-git
 picom-ibhagwan-git
 popcorntime-bin
 powder-player-bin
+prettier
 pulseaudio-bluetooth
 pulsemixer
 python-pip
@@ -134,9 +134,11 @@ ueberzug
 unzip
 ventoy-bin
 vi
+vim
 virtualbox
 virtualbox-bin-guest-iso
 vscodium-bin
+vscodium-bin-marketplace
 wget
 wireless_tools
 wpa_supplicant
@@ -185,6 +187,7 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xterm
+yapf
 yarn
 yay
 youtube-dl
