@@ -3,10 +3,12 @@
 colors:
   # Default colors
   primary:
-    background: "#232731"
-    foreground: "#D8DEE9"
+    # background: "#232731"
+    background: "#1f2227"
+    foreground: "#abb2bf"
 
   # Normal colors
+  # Nord
   normal:
     black: "#4C566A"
     red: "#bf616a"
@@ -27,6 +29,27 @@ colors:
     magenta: "#B48EAD"
     cyan: "#88c0d0"
     white: "#abb2bf"
+
+#   normal:
+#     black: "#4b5263"
+#     red: "#e06c75"
+#     green: "#98C379"
+#     yellow: "#E5C07B"
+#     blue: "#61AFEF"
+#     magenta: "#C678DD"
+#     cyan: "#56B6C2"
+#     white: "#abb2bf"
+# 
+#   # Bright colors
+#   bright:
+#     black: "#4b5263"
+#     red: "#e06c75"
+#     green: "#98C379"
+#     yellow: "#E5C07B"
+#     blue: "#61AFEF"
+#     magenta: "#C678DD"
+#     cyan: "#56B6C2"
+#     white: "#abb2bf"
 
   # background_opacity: 1.0
 
@@ -58,7 +81,7 @@ font:
     # Style can be specified to pick a specific face.
     style: Italic
 
-  size: 16.0
+  size: 13.0
 
   ligatures: true
 

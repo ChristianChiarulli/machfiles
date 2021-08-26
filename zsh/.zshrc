@@ -1,4 +1,5 @@
 #!/bin/sh
+export ZDOTDIR=$HOME/.config/zsh
 
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
@@ -75,3 +76,19 @@ autoload edit-command-line; zle -N edit-command-line
 setxkbmap -option caps:escape
 xset r rate 210 40
 
+=======
+# Speedy keys
+xset r rate 210 40
+
+# Environment variables set everywhere
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="brave"
+
+# For QT Themes
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# remap caps to escape
+setxkbmap -option caps:escape
+# swap escape and caps
+# setxkbmap -option caps:swapescape
