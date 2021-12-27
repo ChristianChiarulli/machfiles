@@ -1,0 +1,344 @@
+# https://github.com/swaywm/sway/wiki
+
+### Dynamic behavior
+exec_always $HOME/.local/bin/i3ipc-dynamic-tiling --tabbed-hide-polybar true
+### Autotiling
+# exec_always autotiling
+
+exec nm-applet --indicator
+exec libinput-gestures-setup autostart start
+exec protonmail-bridge 
+exec pcloudcc -u chris.machine@pm.me -m ~/Cloud -d
+exec blueman-applet
+exec pasystray &
+exec sh $HOME/.config/sway/export_vars.sh
+
+### Clamshell Mode
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+# exec_always $HOME/.local/bin/sway_toggle_laptop
+
+### use xwayland 
+xwayland enable
+exec mako
+
+### Variables
+
+set $mod Mod4
+# set $mod Mod1 # Alt
+
+workspace_auto_back_and_forth yes
+show_marks yes
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term kitty
+set $browser brave
+set $music spotify
+set $files io.elementary.files
+set $email thunderbird
+# set $record wf-recorder --audio --file=$HOME/Video/recordings/recording_with_audio.mp4
+
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg $HOME/Pictures/wallpapers/GO2KU7M.jpg fill 
+# feh --bg-fill --randomize ~/Pictures/wallpapers/* &
+
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+#
+# Example configuration:
+#
+exec swayidle -w \
+         timeout 2700 'swaylock -f -c 000000' \
+         timeout 5400 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 45 mins of inactivity, then turn off
+# your displays after another 45 mins, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+
+input "type:keyboard" {
+    repeat_delay 210
+    repeat_rate 40
+    xkb_options caps:escape
+}
+
+input "type:touchpad" {
+    natural_scroll enabled
+    dwt enabled
+    middle_emulation disabled
+    click_method clickfinger
+    tap enabled
+    tap_button_map lrm
+}
+
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+q kill
+
+    # Start your launcher
+    # bindsym $mod+d exec $menu
+    bindsym $mod+space exec wofi --show drun --insensitive --allow-images --prompt=""
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    # Logout
+    bindsym $mod+Shift+e exec wlogout
+
+#
+# Moving around:
+#
+
+    # Focus next cycle.
+    bindsym $mod+j nop i3ipc_focus next
+
+    # Move next.
+    # bindsym $mod+shift+j nop i3ipc_move next
+
+    # Focus previous cycle.
+    bindsym $mod+k nop i3ipc_focus prev
+
+    # Move previous.
+    # bindsym $mod+shift+k nop i3ipc_move prev
+
+    # Focus previous window toggle.
+    bindsym $mod+i nop i3ipc_focus toggle
+
+    # Focus the other container.
+    bindsym $mod+o nop i3ipc_focus other
+
+    # Move to the other container.
+    bindsym $mod+shift+o nop i3ipc_move other
+
+    # Swap window with the other container.
+    bindsym $mod+Shift+Return nop i3ipc_move swap
+
+    # Toggle tabbed mode.
+    bindsym $mod+Shift+t nop i3ipc_tabbed_toggle
+
+    # Toggle fullscreen mode.
+    bindsym $mod+Shift+f fullscreen toggle
+
+    # Toggle monocle mode.
+    bindsym $mod+f nop i3ipc_monocle_toggle
+
+    # Toggle workspace.
+    bindsym $mod+Tab workspace back_and_forth
+
+    # Move your focus around
+    bindsym $mod+$left focus left
+    # bindsym $mod+$down focus down
+    # bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+
+    # Arrow keys
+    bindsym Shift+Left exec swaymsg -t command workspace prev_on_output
+    bindsym Shift+Right exec swaymsg -t command workspace next_on_output
+    bindsym $mod+Left exec swaymsg -t command workspace prev_on_output
+    bindsym $mod+Right exec swaymsg -t command workspace next_on_output
+    bindsym $mod+Up exec --no-startup-id pactl set-sink-volume 0 +5%
+    bindsym $mod+Down exec --no-startup-id pactl set-sink-volume 0 -5%
+
+    # Swap Windows
+    bindsym $mod+Shift+$left mark --add "_swap", focus left, swap container with mark "_swap", focus left, unmark "_swap"
+    bindsym $mod+Shift+$down mark --add "_swap", focus down, swap container with mark "_swap", focus down, unmark "_swap"
+    bindsym $mod+Shift+$up mark --add "_swap", focus up, swap container with mark "_swap", focus up, unmark "_swap"
+    bindsym $mod+Shift+$right mark --add "_swap", focus right, swap container with mark "_swap", focus right, unmark "_swap"
+
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+    # Brightness controls
+    bindsym XF86MonBrightnessUp exec brightnessctl -q set +5% # increase screen brightness
+    bindsym XF86MonBrightnessDown exec brightnessctl -q set 5%- # decrease screen brightnes
+
+    # Pulse Audio controls
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+    bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    # bindsym $mod+b splith
+    # bindsym $mod+v splitv
+
+    bindsym $mod+w exec $browser
+    bindsym $mod+m exec $music
+    bindsym $mod+b exec $email
+    bindsym $mod+e exec $files
+    # bindsym $mod+v exec $record
+
+    # Switch the current container between different layout styles
+    # bindsym $mod+s layout stacking
+    # bindsym $mod+w layout tabbed
+    bindsym $mod+t layout toggle split
+
+    # Make the current focus fullscreen
+    # bindsym $mod+f fullscreen
+
+    bindsym $mod+y exec grim -g "$(slurp)" - | swappy -f - 
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+semicolon floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+Shift+semicolon focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+### No titlebars
+# default_border none 
+default_border pixel 3
+for_window [title="^.*"] title_format " "
+#default_border normal 0
+# default_floating_border normal 0
+default_border pixel 3
+
+### Gaps
+
+gaps inner 10
+gaps outer 10
+gaps horizontal 10 
+gaps vertical 10
+gaps top 10
+gaps right 10
+gaps bottom 10
+gaps left 10
+
+### Opacity
+# set $opacity 0.97
+# for_window [class="kitty"] opacity $opacity
+# for_window [class="nvim"] opacity 1
+# for_window [app_id="nvim"] opacity .5
+
+### Status Bar:
+
+bar { 
+     swaybar_command waybar
+}
+
+# bar {
+#     position top
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+#
+#     colors {
+#         statusline #ffffff
+#         background #323232
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
+
+seat * hide_cursor when-typing enable
+# seat * hide_cursor 8000
+
+include /etc/sway/config.d/*
