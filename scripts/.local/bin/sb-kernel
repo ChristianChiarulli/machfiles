@@ -1,4 +1,4 @@
 #! /bin/bash 
 
-kern="$(uname -r)"
+kern="$(uname -r | cut -d '-' -f1)"
 echo -e "$kern "
