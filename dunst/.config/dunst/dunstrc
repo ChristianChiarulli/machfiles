@@ -59,7 +59,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 0
+    transparency = 80
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -69,20 +69,20 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 3
 
     # Padding between text and separator.
-    padding = 8
+    padding = 10
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 10
 
     # Padding between text and icon.
     text_icon_padding = 0
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
     frame_color = "#0c7d9d"
@@ -243,7 +243,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 20
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -329,16 +329,16 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#252525"
+    background = "#282c34"
     foreground = "#d8dee9"
-    timeout = 10
+    timeout = 12
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#252525"
-    foreground = "#ffffff"
-    timeout = 10
+    background = "#282c34"
+    foreground = "#d8dee9"
+    timeout = 12
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
@@ -346,7 +346,7 @@
     background = "#900000"
     foreground = "#ffffff"
     frame_color = "#ff0000"
-    timeout = 0
+    timeout = 5
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
 
