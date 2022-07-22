@@ -9,8 +9,8 @@ feh --bg-fill ~/Pictures/wallpapers/mac/Mojave\ Night.jpg --bg-fill ~/Pictures/w
 # Monitor Config
 # xrandr --auto --output DVI-D-0 --mode 2560x1440 --left-of HDMI-0
  
-xrandr --output DP-1 --mode 2560x1440 --rate 59.95
-xrandr --auto --output HDMI-1 --mode 2560x1440 --left-of DP-1
+xrandr --output DVI-D-0 --mode 2560x1440 --rate 59.95
+xrandr --auto --output HDMI-0 --mode 2560x1440 --right-of DVI-D-0
 
 # Network Manager Applet
 nm-applet --indicator &
