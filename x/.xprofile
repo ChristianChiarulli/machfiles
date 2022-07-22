@@ -2,10 +2,15 @@
 dwmblocks &
 
 # Random Photo Every Login
-feh --bg-fill --randomize ~/Pictures/wallpapers/* &
+# feh --bg-fill --randomize ~/Pictures/wallpapers/* &
+
+feh --bg-fill ~/Pictures/wallpapers/mac/Mojave\ Night.jpg --bg-fill ~/Pictures/wallpapers/macos-cataline-night-6k.jpg/
 
 # Monitor Config
-xrandr --auto --output DVI-D-0 --mode 2560x1440 --left-of HDMI-0
+# xrandr --auto --output DVI-D-0 --mode 2560x1440 --left-of HDMI-0
+ 
+xrandr --output DVI-D-0 --mode 2560x1440 --rate 59.95
+xrandr --auto --output HDMI-0 --mode 2560x1440 --right-of DVI-D-0
 
 # Network Manager Applet
 nm-applet --indicator &
@@ -20,11 +25,11 @@ xset r rate 210 40
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="kitty"
 export BROWSER="brave"
 
 # For QT Themes
-export QT_QPA_PLATFORMTHEME=qt5ct
+# export QT_QPA_PLATFORMTHEME=qt5ct
 
 # XDG Paths
 export XDG_CONFIG_HOME=$HOME/.config
@@ -35,19 +40,19 @@ export XDG_DATA_HOME=$HOME/.local/share
 picom -b
 
 # Hide mouse when typing
-xbanish &
+# xbanish &
 
 # Screenshots
 flameshot &
 
 # Bluetooth systray icon
-blueman-applet &
+# blueman-applet &
 
 # helps with puls audio
-pasystray &
+# pasystray &
 
 # Easy file sharing
-pcloudcc -u chris.machine@pm.me -m ~/Cloud -d
+# pcloudcc -u chris.machine@pm.me -m ~/Cloud -d
 
 # Screenkey applet (this will break everything)
 # screenkey --start-disabled
@@ -58,7 +63,7 @@ setxkbmap -option caps:escape
 # setxkbmap -option caps:swapescape
 
 # load Xresources
-xrdb ~/.Xresources
+# xrdb ~/.Xresources
 
 # zsh config dir
-export ZDOTDIR=$HOME/.config/zsh
+# export ZDOTDIR=$HOME/.config/zsh
