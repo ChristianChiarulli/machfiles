@@ -1,0 +1,126 @@
+/**
+ * ROFI Color theme
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
+* {
+    font:            "Times New Roman 15";
+    text-color:  #abb2bf;
+    background-color:  #1b1f27;
+    dark: #1b1f27;
+    // Black
+    black:       #4C566A;
+    lightblack:  #4C566A;
+    //
+    // Red
+    red:         #bf616a;
+    lightred:    #bf616a;
+    //
+    // Green
+    green:       #A3BE8C;
+    lightgreen:  #A3BE8C;
+    //
+    // Yellow
+    yellow:      #C68A75;
+    lightyellow:     #D7BA7D;
+    //
+    // Blue
+    blue:      #083C5A;
+    lightblue:     #5e81ac;
+    //
+    // Magenta
+    magenta:      #B48EAD;
+    lightmagenta:     #B48EAD;
+    //
+    // Cyan
+    cyan:      #88c0d0;
+    lightcyan:     #88c0d0;
+    //
+    // White
+    white:      #abb2bf;
+    lightwhite:     #abb2bf;
+    //
+    // Bold, Italic, Underline
+    highlight:     bold #D7BA7D;
+}
+
+element-icon {
+    /** change size to 128 pixels. */
+    size: 18px;
+    cursor: inherit;
+    padding: 0.2em;
+}
+
+window {
+    height:   30%;
+    width: 15em;
+    location: northwest;
+    anchor:   northwest;
+    border:  2px 2px 2px 2px;
+    border-color: @yellow;
+    text-color: @lightwhite;
+    margin: 0.3em;
+    border-radius: 0.4em;
+}
+/* mode-switcher { */
+/*     border: 2px 0px 0px 0px; */
+/*     background-color: @lightblack; */
+/*     padding: 4px; */
+/* } */
+button selected {
+    border-color: @lightgreen;
+    text-color: @lightgreen;
+}
+inputbar {
+    /* background-color: @lightyellow; */
+    text-color: @lightgreen;
+    /* padding: 1px; */
+    /* border: 0px 0px 2px 0px; */
+}
+/* mainbox { */
+/*     expand: true; */
+/*     background-color: #1c1c1cee; */
+/*     spacing: 1em; */
+/* } */
+listview {
+    padding: 0em 0.2em 0em 0.7em;
+    dynamic: false;
+    lines: 0;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element selected  normal {
+    background-color: @blue;
+}
+element normal active {
+    text-color: @lightblue;
+}
+element normal urgent {
+    text-color: @lightred;
+}
+element alternate normal {
+}
+element alternate active {
+    text-color: @lightblue;
+}
+element alternate urgent {
+    text-color: @lightred;
+}
+element selected active {
+    background-color: @lightblue;
+    text-color: @dark;
+}
+element selected urgent {
+    background-color: @lightred;
+    text-color: @dark;
+}
+error-message {
+    expand: true;
+    background-color: red;
+    border-color: darkred;
+    border: 2px;
+    padding: 1em;
+}

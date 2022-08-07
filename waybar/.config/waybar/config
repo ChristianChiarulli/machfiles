@@ -1,0 +1,113 @@
+{
+  // NOTE: Icons: https://github.com/Alexays/Waybar/issues/350
+    "height": 30, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    "modules-left": ["custom/launcher", "wlr/workspaces"],
+    "modules-center": ["custom/spotify"],
+    "modules-right": ["tray", "pulseaudio", "network", "backlight", "battery", "battery#bat2", "clock"],
+    "wlr/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "urgent": "",
+        "active": "",
+        "default": ""
+      }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "<span color='#bf616a'></span> {:%I:%M %p}",
+        "format-alt": "<span color='#bf616a'></span> {:%a %b %d}"
+    },
+    // "clock": {
+    //     // "timezone": "America/New_York",
+    //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    //     "format-alt": "{:%Y-%m-%d}"
+    // },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}   {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        // "format-charging": " {capacity}%",
+        // "format-plugged": " {capacity}%",
+        "format-alt": "{icon}   {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+
+        "format-wifi": "直 {signalStrength}%",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": "睊",
+        // "on-click": "nmtui"
+        // "format-wifi": "{essid} ({signalStrength}%) ",
+        // "format-ethernet": "{ipaddr}/{cidr} ",
+        // "tooltip-format": "{ifname} via {gwaddr} ",
+        // "format-linked": "{ifname} (No IP) ",
+        // "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        // "format": "{volume}% {icon} {format_source}",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢",
+        // "format-source": "{volume}% ",
+        // "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/launcher": {
+        // "exec": "$HOME/.config/waybar/scripts/spotify.sh",
+        // "return-type": "json",
+        // "max-length": 40,
+        // "format": " <span color='#bf616a'> </span>",
+        "format": " <span color='#bf616a'> </span>",
+        // "format": " <span color='#bf616a'> 異</span>",
+        // "format": " <span color='#bf616a'> </span>",
+        "on-click": "rofi -show drun",
+    },
+    "custom/spotify": {
+        "exec": "$HOME/.config/waybar/scripts/spotify.sh",
+        // "return-type": "json",
+        "max-length": 40,
+        "format": " {}",
+        "on-click": "playerctl play-pause",
+        "on-double-click": "playerctl next",
+        "on-right-click": "on-click-right"
+    },
+}
+
