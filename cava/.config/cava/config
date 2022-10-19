@@ -121,16 +121,16 @@
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
 # background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
-; gradient = 1
-; gradient_count = 8
-; gradient_color_1 = '#59cc33'
-; gradient_color_2 = '#80cc33'
-; gradient_color_3 = '#a6cc33'
-; gradient_color_4 = '#cccc33'
-; gradient_color_5 = '#cca633'
-; gradient_color_6 = '#cc8033'
-; gradient_color_7 = '#cc5933'
-; gradient_color_8 = '#cc3333'
+gradient = 1
+gradient_count = 8
+gradient_color_1 = '#f7768e'
+gradient_color_2 = '#9d7cd8'
+gradient_color_3 = '#2ac3de'
+gradient_color_4 = '#0db9d7'
+gradient_color_5 = '#7dcfff'
+gradient_color_6 = '#ff9e64'
+gradient_color_7 = '#e0af68'
+gradient_color_8 = '#9ece6a'
 
 
 

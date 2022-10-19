@@ -5,7 +5,8 @@
 }
 
 window#waybar {
-  background-color: rgba(30, 34, 42, 0.5);
+  /* background-color: rgba(26, 27, 38, 0.5); */
+  background-color: rgba(26, 27, 38, 1);
   /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
   color: #ffffff;
   transition-property: background-color;
@@ -19,7 +20,7 @@ window#waybar.hidden {
 #workspaces button {
   padding: 0 5px;
   background-color: transparent;
-  color: #5e81ac;
+  color: #6a92d7;
   /* Use box-shadow instead of border so the text isn't offset */
   box-shadow: inset 0 -3px transparent;
   /* Avoid rounded borders under each workspace name */
@@ -42,7 +43,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-  color: #c68a75;
+  color: #ff9e64;
 }
 
 #workspaces button.urgent {
@@ -53,6 +54,13 @@ window#waybar.hidden {
 /*   background-color: #64727d; */
 /*   border-bottom: 3px solid #ffffff; */
 /* } */
+
+#window {
+  /* border-radius: 20px; */
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
+  color: #64727d;
+}
 
 #clock,
 #battery,
@@ -88,7 +96,7 @@ window#waybar.hidden {
 }
 
 #clock {
-  color: #abb2bf;
+  color: #c0caf5;
   /* color: #bf616a; */
 }
 
@@ -143,7 +151,7 @@ label:focus {
 }
 
 #network {
-  color: #88c0d0;
+  color: #1abc9c;
 }
 
 #network.disconnected {
@@ -152,7 +160,7 @@ label:focus {
 
 #pulseaudio {
   /* background-color: #B48EAD; */
-  color: #b48ead;
+  color: #bb9af7;
 }
 
 #pulseaudio.muted {
