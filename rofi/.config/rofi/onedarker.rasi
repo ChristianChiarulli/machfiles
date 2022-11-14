@@ -7,11 +7,11 @@
 * {
     font:            "Times New Roman 15";
     text-color:  #abb2bf;
-    background-color:  #1b1f27;
+    background-color:  #2c2c2c;
     dark: #1b1f27;
     // Black
-    black:       #4C566A;
-    lightblack:  #4C566A;
+    black:       #212121;
+    lightblack:  #777777;
     //
     // Red
     red:         #bf616a;
@@ -26,8 +26,8 @@
     lightyellow:     #D7BA7D;
     //
     // Blue
-    blue:      #083C5A;
-    lightblue:     #5e81ac;
+    blue:      #2d4059;
+    lightblue:     #3281ea;
     //
     // Magenta
     magenta:      #B48EAD;
@@ -57,8 +57,8 @@ window {
     width: 15em;
     location: northwest;
     anchor:   northwest;
-    border:  2px 2px 2px 2px;
-    border-color: @yellow;
+    border:  1px 1px 1px 1px;
+    border-color: @lightblack;
     text-color: @lightwhite;
     margin: 0.3em;
     border-radius: 0.4em;

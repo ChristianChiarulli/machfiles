@@ -2,11 +2,16 @@
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: 'Roboto Mono Medium', 'Ubuntu Nerd Font';
   font-size: 17px;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 window#waybar {
-  /* background-color: rgba(26, 27, 38, 0.5); */
-  background-color: rgba(26, 27, 38, 1);
+  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: rgba(26, 27, 38, 0); */
+  /* background-color: #1e1e1e; */
+  /* background-color: #1e1e1e; */
   /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
   color: #ffffff;
   transition-property: background-color;
@@ -17,10 +22,16 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
+#workspaces {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
 #workspaces button {
-  padding: 0 5px;
+  padding: 0 10px;
+  /* padding-right: 10px; */
   background-color: transparent;
-  color: #6a92d7;
+  color: #a9a9a9;
   /* Use box-shadow instead of border so the text isn't offset */
   box-shadow: inset 0 -3px transparent;
   /* Avoid rounded borders under each workspace name */
@@ -31,19 +42,22 @@ window#waybar.hidden {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
   /* cursor: pointer; */
+  border-radius: 10px;
   background: rgba(0, 0, 0, 0.2);
   /* box-shadow: inset 0 -3px #ffffff; */
-  color: #bf616a;
+  /* color: #bf616a; */
+  color: #ffffff;
 }
 
 #workspaces button.focused {
   /* background-color: #64727d; */
-  color: #bf616a;
+  color: #ffffff;
   /* box-shadow: inset 0 -3px #ffffff; */
 }
 
 #workspaces button.active {
-  color: #ff9e64;
+  /* color: #ff9e64; */
+  color: #ffffff;
 }
 
 #workspaces button.urgent {
@@ -96,7 +110,17 @@ window#waybar.hidden {
 }
 
 #clock {
-  color: #c0caf5;
+  /* color: #c0caf5; */
+  color: #ffffff;
+  /* color: #bf616a; */
+}
+
+#clock:hover {
+  /* cursor: pointer; */
+  background: rgba(0, 0, 0, 0.2);
+  /* border: None; */
+  box-shadow: None;
+  /* box-shadow: inset 0 -3px #ffffff; */
   /* color: #bf616a; */
 }
 
@@ -151,7 +175,36 @@ label:focus {
 }
 
 #network {
-  color: #1abc9c;
+  padding: 2.5px;
+  /* color: #1abc9c; */
+  color: #ffffff;
+}
+
+#network:hover {
+  /* cursor: pointer; */
+  background: rgba(0, 0, 0, 0.2);
+  /* border: None; */
+  box-shadow: None;
+  /* box-shadow: inset 0 -3px #ffffff; */
+  /* color: #bf616a; */
+}
+
+#custom-launcher {
+  color: #ffffff;
+  /* border: None; */
+  /* margin-right: 0px; */
+  /* padding-right: 0px; */
+  padding: 0 10px;
+}
+
+#custom-launcher:hover {
+  /* padding-right: 1px; */
+  /* cursor: pointer; */
+  background: rgba(0, 0, 0, 0.2);
+  /* border: None; */
+  box-shadow: None;
+  /* box-shadow: inset 0 -3px #ffffff; */
+  /* color: #bf616a; */
 }
 
 #network.disconnected {
@@ -159,8 +212,19 @@ label:focus {
 }
 
 #pulseaudio {
+  /* padding: 1px; */
   /* background-color: #B48EAD; */
-  color: #bb9af7;
+  /* color: #bb9af7; */
+  color: #ffffff;
+}
+
+#pulseaudio:hover {
+  /* cursor: pointer; */
+  background: rgba(0, 0, 0, 0.2);
+  /* border: None; */
+  box-shadow: None;
+  /* box-shadow: inset 0 -3px #ffffff; */
+  /* color: #bf616a; */
 }
 
 #pulseaudio.muted {

@@ -35,16 +35,17 @@ autoload -Uz colors && colors
 source "$ZDOTDIR/zsh-functions"
 
 # Normal files to source
-zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
-zsh_add_file "zsh-aliases"
-zsh_add_file "zsh-prompt"
+# zsh_add_file "zsh-exports"
+# zsh_add_file "zsh-vim-mode"
+# zsh_add_file "zsh-aliases"
+# zsh_add_file "zsh-prompt"
 
 # Plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "hlissner/zsh-autopair"
-zsh_add_completion "esc/conda-zsh-completion" false
+# zsh_add_plugin "zsh-users/zsh-autosuggestions"
+# zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+# zsh_add_plugin "hlissner/zsh-autopair"
+# zsh_add_completion "esc/conda-zsh-completion" false
+
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
 
@@ -85,3 +86,20 @@ export BROWSER="brave"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+
+# Normal files to source
+zapsource "zsh-exports"
+zapsource "zsh-vim-mode"
+zapsource "zsh-aliases"
+zapsource "zsh-prompt"
+
+# Plugins
+zapplug "zsh-users/zsh-autosuggestions"
+zapplug "zsh-users/zsh-syntax-highlighting"
+zapplug "hlissner/zsh-autopair"
+zapcmp "esc/conda-zsh-completion" false
