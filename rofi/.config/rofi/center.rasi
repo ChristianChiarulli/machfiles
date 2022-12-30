@@ -1,0 +1,190 @@
+* {
+    foreground:  #ffffff;
+    backlight:   #ccffeedd;
+    background-color:  transparent;
+    dark: #1c1c1c;
+    // Black
+    black:       #2c2c2c;
+    lightblack:  #2c2c2c;
+    tlightblack:  #1a1a1add;
+    //
+    // Red
+    red:         #cd5c5c;
+    lightred:    #cc5533;
+    //
+    // Green
+    green:       #86af80;
+    lightgreen:  #88cc22;
+    //
+    // Yellow
+    yellow:      #e8ae5b;
+    lightyellow:     #ffa75d;
+    //
+    // Blue
+    /* blue:      #3c3c3c; */
+    blue:      #444444;
+    lightblue:     #87ceeb;
+    //
+    // Magenta
+    magenta:      #deb887;
+    lightmagenta:     #996600;
+    //
+    // Cyan
+    cyan:      #b0c4de;
+    tcyan:      #ccb0c4de;
+    lightcyan:     #b0c4de;
+    //
+    // White
+    white:      #bbaa99;
+    lightwhite:     #ddccbb;
+    //
+    // Bold, Italic, Underline
+    /* highlight:     underline bold #ffffff; */
+    highlight:     #ffffff;
+
+    transparent: rgba(0,0,0,0);
+    font: "Source Code Pro 18";
+}
+window {
+    height:   20%;
+    width: 20%;
+    location: center;
+    anchor:   center;
+    transparency: "screenshot";
+    border:  0px;
+    border-radius: 10px;
+    /* color: @magenta; */
+    background-color: @transparent;
+    spacing: 0;
+    children:  [mainbox];
+    orientation: horizontal;
+}
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+message {
+    border-color: @foreground;
+    border:  1px;
+//    border-radius: 10px;
+    padding: 5;
+    background-color: @tcyan;
+}
+
+message {
+    font: "Source Code Pro 8";
+    color: @black;
+}
+
+inputbar {
+    color: @foreground;
+    padding: 11px;
+    background-color: @tlightblack;
+    border: 1px;
+    border-radius:  15px 15px 0px 0px;
+    border-color: #666666;
+    font: "Source Code Pro 18";
+}
+
+entry,prompt,case-indicator {
+    text-font: inherit;
+    text-color:inherit;
+}
+
+prompt {
+    margin:     0px 0.3em 0em 0em ;
+}
+
+listview {
+    padding: 8px 8px 0 8px;
+    border-radius: 0px 0px 15px 15px;
+    border-color: #666666;
+    border: 0px 1px 1px 1px;
+    background-color: @tlightblack;
+    dynamic: false;
+    lines: 10;
+}
+
+element {
+    padding: 0.3em;
+    vertical-align: 0.5;
+    border-radius: 0.3em;
+    background-color: transparent;
+    color: @foreground;
+    font:inherit;
+}
+
+element-icon {
+    /** change size to 128 pixels. */
+    size: 28;
+    cursor: inherit;
+    padding: 0 0.3em 0 0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element selected.normal {
+    background-color: @blue;
+}
+
+element normal active {
+    foreground: @lightblue;
+}
+
+element normal urgent {
+    foreground: @lightred;
+}
+
+element alternate normal {
+}
+
+element alternate active {
+    foreground: @lightblue;
+}
+
+element alternate urgent {
+    foreground: @lightred;
+}
+
+element selected active {
+    background-color: @lightblue;
+    foreground: @dark;
+}
+
+element selected urgent {
+    background-color: @lightred;
+    foreground: @dark;
+}
+
+element normal normal {
+
+}
+
+vertb {
+    expand: false;
+    children: [ dummy0, mode-switcher, dummy1  ];
+}
+
+mode-switcher {
+    expand: false;
+    orientation: vertical;
+    spacing: 0px;
+    border: 0px 0px 0px 0px;
+}
+button selected normal {
+    color: @dark;
+    border: 2px 0px 2px 2px;
+    background-color: @backlight;
+    border-color: @foreground;
+}
+error-message {
+    expand: true;
+    background-color: red;
+    border-color: darkred;
+    border: 2px;
+    padding: 1em;
+}
+
