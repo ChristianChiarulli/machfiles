@@ -115,7 +115,7 @@
 
     ### Text ###
 
-    font = Monospace 10
+    font = Monospace 12
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -337,14 +337,14 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#282c34"
+    background = "#2c2c2c"
     foreground = "#d8dee9"
     timeout = 12
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#282c34"
+    background = "#2c2c2c"
     foreground = "#d8dee9"
     timeout = 12
     # Icon for notifications with normal urgency, uncomment to enable
