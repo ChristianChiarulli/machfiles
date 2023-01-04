@@ -1,5 +1,5 @@
 # Machfiles
-
+![machfiles_logo](./MACH_OS.png)
 ![machfiles image](./machfiles.png)
 
 ## Installing
