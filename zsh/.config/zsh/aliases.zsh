@@ -5,7 +5,7 @@ alias g='lazygit'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
 # alias lvim="env TERM=wezterm lvim"
-alias nvim="env TERM=wezterm nvim"
+# alias nvim="env TERM=wezterm nvim"
 
 # Remarkable
 alias remarkable_ssh='ssh root@10.11.99.1'
