@@ -1,0 +1,4 @@
+tap "homebrew/bundle"
+brew "lazygit"
+brew "stow"
+cask "firefox"
