@@ -1,0 +1,8 @@
+[user]
+	email = chris.machine@pm.me
+	name = Christian Chiarulli
+
+[core]
+	editor = nvim
+[color]
+	ui = true
