@@ -24,14 +24,14 @@ stow zsh # Just my zsh config
 
 MacOS
 
-All of my packages for MacOS can be found in `brew/Brewfile`
+All of my packages for MacOS can be found in `brew/.Brewfile`
 
 - Install
 
 ```
-cd ~/.machfile/brew
+stow ~/.machfiles/brew
 
-brew bundle
+brew bundle --global
 ```
 
 ## Linux
