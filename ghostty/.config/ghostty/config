@@ -1,0 +1,19 @@
+# Docs: https://ghostty.org/docs/config.
+
+font-family = MonoLisa
+font-family = AppleColorEmoji
+window-padding-x = 4
+window-padding-y = 4
+background = #14161b
+mouse-hide-while-typing = true
+shell-integration = zsh
+theme = catppuccin-frappe
+adjust-cell-height = 12%
+# adjust-cell-width = 5%
+
+## Clipboard
+
+clipboard-write = allow
+clipboard-read = ask
+
+
