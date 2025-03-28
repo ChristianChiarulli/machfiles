@@ -4,16 +4,27 @@ font-family = MonoLisa
 font-family = AppleColorEmoji
 window-padding-x = 4
 window-padding-y = 4
+window-decoration = auto
 background = #14161b
 mouse-hide-while-typing = true
-shell-integration = zsh
 theme = catppuccin-frappe
 adjust-cell-height = 12%
+confirm-close-surface = always
 # adjust-cell-width = 5%
 
-## Clipboard
 
+## macOS
+macos-option-as-alt = true
+macos-titlebar-style = tabs
+macos-non-native-fullscreen = visible-menu
+keybind = cmd+w=quit
+
+## Clipboard
 clipboard-write = allow
 clipboard-read = ask
+clipboard-paste-protection = false
 
+## Shell integration
+shell-integration = zsh
+shell-integration-features = no-cursor
 

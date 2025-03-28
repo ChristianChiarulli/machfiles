@@ -1,1 +1,1 @@
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd - return : open -n -a "Ghostty"
