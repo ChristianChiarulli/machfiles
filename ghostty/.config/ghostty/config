@@ -1,17 +1,31 @@
 # Docs: https://ghostty.org/docs/config.
 
-font-family = MonoLisa
-font-family = AppleColorEmoji
-window-padding-x = 4
-window-padding-y = 4
-window-decoration = auto
-background = #14161b
-mouse-hide-while-typing = true
-theme = catppuccin-frappe
-adjust-cell-height = 12%
-confirm-close-surface = always
-# adjust-cell-width = 5%
+# Reload by pressing:
+# ctrl+shift+, (Linux) 
+# cmd+shift+, (macOS)
 
+# font-family = MonoLisa
+font-family = Comic Code Ligatures
+font-family = AppleColorEmoji
+font-size = 18
+window-padding-x = 8
+window-padding-y = 8
+window-decoration = auto
+window-width = 70
+window-height = 16
+mouse-hide-while-typing = true
+theme = void
+adjust-cell-height = 35%
+# confirm-close-surface = always
+# adjust-cell-width = 5%
+bold-is-bright = true
+
+adjust-cursor-height = 35%
+font-thicken = false
+cursor-style = block
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+shell-integration-features = no-cursor
 
 ## macOS
 macos-option-as-alt = true
